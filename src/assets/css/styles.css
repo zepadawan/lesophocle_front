@@ -538,7 +538,11 @@ textarea:active::placeholder {
 }
 
 .bg-light {
-    background-color: #efefef !important;
+  background-color: #efefef !important;
+}
+
+.bg-blue {
+  background-color: #20529c !important;
 }
 
 .bg-lighten {
