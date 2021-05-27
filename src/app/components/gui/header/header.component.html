@@ -1,13 +1,17 @@
 <header>
   <!-- header top start -->
-  <div class="header-top theme1 bg-blue py-35">
+  <div class="header-top theme1 bg-dark py-35">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-7 order-last order-md-first">
-          <div class="static-info text-center text-md-left">
+          <div class="static-info text-center text-md-right">
           </div>
         </div>
-        <div class="col-lg-6 col-md-5">
+        <div class="col-lg-2 col-md-1">
+          <div class="logo text-center text-sm-left mb-30 mb-sm-0">
+            <a href="index.html"><img [src]="refApiImages + 'divers/logo.jpg'"></a>
+          </div>
+
           <nav class="navbar-top pb-2 pb-md-0 position-relative">
           </nav>
         </div>
@@ -21,9 +25,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-sm-6 col-lg-2 order-first">
-          <div class="logo text-center text-sm-left mb-30 mb-sm-0">
-            <a href="index.html"><img [src]="refApiImages + 'divers/logo.jpg'"></a>
-          </div>
+
         </div>
 
         <div class="col-sm-6 col-lg-5 col-xl-4">
@@ -69,26 +71,25 @@
 
   <!-- header bottom start -->
   <!-- header bottom start -->
-  <nav class="header-bottom theme1 d-none d-lg-block">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- <div class="col-lg-15 offset-lg-1 d-flex flex-wrap align-items-center position-relative"> -->
-        <div class="col-lg-15 ">
-          <ul class="main-menu d-flex">
-            <li routerLinkActive="active"><a routerLink="/Accueil">Accueil</a></li>
-            <li routerLinkActive="active"><a routerLink="/laCarte">La Carte</a></li>
-            <li routerLinkActive="active"><a routerLink="/lesMenus">Les Menus</a></li>
-            <li routerLinkActive="active"><a routerLink="/lesDesserts">Les Desserts</a></li>
-            <li routerLinkActive="active"><a routerLink="/lesBoissons">Les Boissons</a></li>
-            <li routerLinkActive="active"><a routerLink="/lesSoirres">Les soirées</a></li>
-            <li routerLinkActive="active"><a routerLink="/lesPrivees">privatisation</a></li>
-            <li routerLinkActive="active"><a routerLink="/click&collect">click & collect</a></li>
-            <li routerLinkActive="active"><a routerLink="/nousEcrire">Nous écrire</a></li>
-            <li routerLinkActive="active"><a routerLink="/localiser">Localiser</a></li>
-            <li routerLinkActive="active"><a routerLink="/administration">Administration</a></li>
-          </ul>
-        </div>
-      </div>
+  <br>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+    <div class="collapse navbar-collapse dark col-lg-12 offset-lg-1 d-flex flex-wrap position-relative"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto main-menu d-flex text-dark">
+        <li routerLinkActive="active"><a routerLink="/accueil">Accueil</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">La Carte</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Les Menus</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Les Desserts</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Les Boissons</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Les soirées</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">privatisation</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">click & collect</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Nous écrire</a></li>
+        <li routerLinkActive="active"><a routerLink="/localiser">Localiser</a></li>
+        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/connexion">Connexion</a></li>
+        <li routerLinkActive="active" *ngIf="isAuth"><a routerLink="/connexion">Déconnexion</a></li>
+        <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">Administration</a></li>
+      </ul>
     </div>
   </nav>
   <!-- header bottom end -->
