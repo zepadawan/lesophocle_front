@@ -17,6 +17,7 @@ import { LesBoissonsComponent } from './components/restaurant/les-boissons/les-b
 import { LesDessertsComponent } from './components/restaurant/les-desserts/les-desserts.component';
 import { LesSoireesPriveesComponent } from './components/restaurant/les-soirees-privees/les-soirees-privees.component';
 import { LesSoireesComponent } from './components/restaurant/les-soirees/les-soirees.component';
+import { AuthGuard } from './services/auth.guard.service';
 
 const routes: Routes = [
 
@@ -27,16 +28,16 @@ const routes: Routes = [
   { path: 'lesDesserts', component: LesDessertsComponent },
   { path: 'lesSoirees', component: LesSoireesComponent },
   { path: 'lesPrivees', component: LesSoireesPriveesComponent },
-  { path: 'click&collect', component: ClickAndCollectComponent },
-  { path: 'nousEcrire', component: NousEcrireComponent },
+  { path: 'click&collect', component: ClickAndCollectComponent, canActivate: [AuthGuard] },
+  { path: 'nousEcrire', component: NousEcrireComponent, canActivate: [AuthGuard] },
   { path: 'localiser', component: LocaliserComponent },
   { path: 'connexion', component: LoginComponent },
 
-  { path: 'administration', component: AdministrationComponent },
-  { path: 'add-plat', component: AddPlatComponent },
-  { path: 'edit-plat', component: EditPlatComponent },
-  { path: 'add-categorie', component: AddCategorieComponent },
-  { path: 'edit-plat', component: EditCategorieComponent },
+  { path: 'administration', component: AdministrationComponent, canActivate: [AuthGuard] },
+  { path: 'add-plat', component: AddPlatComponent, canActivate: [AuthGuard] },
+  { path: 'edit-plat', component: EditPlatComponent, canActivate: [AuthGuard] },
+  { path: 'add-categorie', component: AddCategorieComponent, canActivate: [AuthGuard] },
+  { path: 'edit-plat', component: EditCategorieComponent, canActivate: [AuthGuard] },
 
   { path: 'notFound', component: NotFoundComponent },
 
