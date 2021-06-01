@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
     private categorieService: CategorieService) { }
 
   ngOnInit(): void {
+
     this.carts = this.cartService.carts;
     this.categories = this.categorieService.categories;
 

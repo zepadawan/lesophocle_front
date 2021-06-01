@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,24 @@ import { EditPlatComponent } from './components/administration/plats/edit-plat/e
 import { EditCategorieComponent } from './components/administration/categories/edit-categorie/edit-categorie.component';
 import { AddCategorieComponent } from './components/administration/categories/add-categorie/add-categorie.component';
 import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
+import { environment } from 'src/environments/environment';
+import { AppConfiguration } from './services/config-helper.service';
+
+// Déclaration de la fonction d'initialisation de la configuration
+// export function initConfig(configService: ConfigHelperService) {
+//   return () => configService.load(environment, 'assets/config.json');
+// }
+
+
+export function AppConfigurationFactory(
+  appConfig: AppConfiguration) {
+  return () => appConfig.ensureInit()
+    .then((data) =>
+      console.log(data)
+    )
+    .catch();
+}
+
 
 
 @NgModule({
@@ -74,7 +92,12 @@ import { AddPlatComponent } from './components/administration/plats/add-plat/add
     EditorModule
 
   ],
-  providers: [],
+  providers: [
+    AppConfiguration,
+    // { provide: APP_INITIALIZER, useFactory: AppConfigurationFactory, deps: [AppConfiguration, HttpClient], multi: true },
+  ],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

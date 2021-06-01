@@ -1,136 +1,115 @@
 <node-header></node-header>
-<section class="row mg-20" style="margin-left: 50px;">
-  <div>
-    <div>
-      <div class="row mg-20" style="margin-left: 100px;">
-        <div class=" table-responsive mg-20" style="margin-left: 50px;">
-          <table class="table mg-20 ">
-            <tbody class="pt-20 pb-20 col-5 ">
 
-              <tr classe="">
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'terrasse/01.jpg'" alt="">
-                </td>
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Notre terrasse aérée
-                    </a>
-                  </div>
-                </td>
-              </tr>
+<div class="container">
 
-              <tr classe="">
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Entrées
-                    </a>
-                  </div>
-                </td>
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'entrees/02.jpg'" alt="">
-                </td>
-              </tr>
-
-              <!-- ***************************************** -->
-              <tr classe="">
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'pates/03.jpg'" alt="">
-                </td>
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Pâtes
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-              <tr classe="">
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Pizzas
-                    </a>
-                  </div>
-                </td>
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'pizzas/01.jpg'" alt="">
-                </td>
-              </tr>
-              <!-- ***************************************** -->
-
-              <!-- ***************************************** -->
-              <tr classe="">
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'plats/01.jpg'" alt="">
-                </td>
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Plats
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-              <tr classe="">
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Desserts Maison
-                    </a>
-                  </div>
-                </td>
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'desserts/Millefeuille.jpg'" alt="">
-                </td>
-              </tr>
-              <!-- ***************************************** -->
-
-              <!-- ***************************************** -->
-              <tr classe="">
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'concerts/Concert13.jpg'" alt="">
-                </td>
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Concerts
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-              <tr classe="">
-                <td classe="center"
-                  style="width:500px; text-align: center; vertical-align: middle; text-decoration: underline;">
-                  <div class="text-dark wrap ">
-                    <a href="">
-                      Les Soirées privatisées
-                    </a>
-                  </div>
-                </td>
-                <td style="width:500px">
-                  <img classe="img-home" [src]="refApiImage + 'soirees_privees/01.jpg'" alt="">
-                </td>
-              </tr>
-              <!-- ***************************************** -->
-
-            </tbody>
-
-
-          </table>
-        </div>
+  <!-- ligne 1 -->
+  <div class="row">
+    <div class="col-8 ">
+      <img [src]="refApiImage + '/terrasse/01.jpg'" class="box-images">
+    </div>
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        La terrasse
       </div>
     </div>
   </div>
-</section>
+
+  <!-- ligne 2 -->
+  <div class="row">
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Entrées
+      </div>
+    </div>
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'entrees/02.jpg'" class="box-images">
+    </div>
+  </div>
+
+  <!-- ligne 3 -->
+  <div class="row">
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'pates/03.jpg'" class="box-images">
+    </div>
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Pâtes
+      </div>
+    </div>
+  </div>
+
+  <!-- ligne 4 -->
+  <div class="row">
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Pizzas
+      </div>
+    </div>
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'pizzas/02.jpg'" class="box-images">
+    </div>
+  </div>
+
+  <!-- ligne 5 -->
+  <div class="row">
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'plats/01.jpg'" class="box-images">
+    </div>
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Plats
+      </div>
+    </div>
+  </div>
+
+  <!-- ligne 6 -->
+  <div class="row">
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Viandes
+      </div>
+    </div>
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'viandes/Cote_de_Boeuf.jpg'" class="box-images">
+    </div>
+  </div>
+
+  <!-- ligne 7 -->
+  <div class="row">
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'desserts/Millefeuille.jpg'" class="box-images">
+    </div>
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Desserts Maison
+      </div>
+    </div>
+  </div>
+
+  <!-- ligne 8 -->
+  <div class="row">
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Concerts
+      </div>
+    </div>
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'concerts/Concert13.jpg'" class="box-images">
+    </div>
+  </div>
+
+  <!-- ligne 9 -->
+  <div class="row">
+    <div class="col-8 ">
+      <img [src]="refApiImage + 'soirees_privees/01.jpg'" class="box-images">
+    </div>
+    <div class="col-4">
+      <div class="test-dark texte-home">
+        Soirées privatisées
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

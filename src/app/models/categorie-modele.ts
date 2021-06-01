@@ -1,2 +1,4 @@
-export interface Categorie {
+export class Categorie {
+  id?: number;
+  libelle?: string;
 }
