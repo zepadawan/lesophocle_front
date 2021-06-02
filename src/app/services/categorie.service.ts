@@ -25,16 +25,19 @@ export class CategorieService {
 
   getCategoriesFromServer() {
     const url = `${environment.api}` + 'categories';
+    console.log(url);
+
     return new Promise((resolve, reject) => {
       this.http.get<any>(url).subscribe(
         (data: Result) => {
           if (data.status == 200) {
             this.categories = data.args;
+            resolve(data.args)
           }
           this.emitCategories();
         },
         (err) => {
-          // console.log(err);
+          reject(false)
         }
       )
     })

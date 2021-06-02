@@ -95,7 +95,7 @@
               <a routerLink="/notFound">Les Pizzas</a>
             </li>
             <li>
-              <a routerLink="/notFound">Les Viandes</a>
+              <a routerLink="/lesViandes">Les Viandes</a>
             </li>
             <li>
               <a routerLink="/notFound">Les Desserts</a>
@@ -131,22 +131,16 @@
         <li routerLinkActive="active"><a routerLink="/notFound">privatisation</a></li>
         <li routerLinkActive="active"><a routerLink="/notFound">click & collect</a></li>
         <li routerLinkActive="active"><a routerLink="/nousEcrire">Nous écrire</a></li>
-        <li routerLinkActive="active"><a routerLink="/localiser">Localiser</a></li>
         <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/connexion">Connexion</a></li>
         <li routerLinkActive="active" *ngIf="isAuth"><a routerLink="/connexion">Déconnexion</a></li>
-        <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">Administration</a>
+        <!-- <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">Administration</a> -->
+        <li routerLinkActive="active"><a routerLink="/notFound">Administration</a>
           <ul class="sub-menu" style="width :100px">
             <li>
-              <a routerLink="/add-Plat">Ajouter un Plat</a>
+              <a routerLink="/addPlat">Ajouter un Plat</a>
             </li>
             <li>
-              <a routerLink="/admin_categories">Editer un Plat</a>
-            </li>
-            <li>
-              <a routerLink="/admin_categories">Ajouter une catégorie</a>
-            </li>
-            <li>
-              <a routerLink="/admin_textes">Editer une catégorie</a>
+              <a routerLink="/addCategorie">Ajouter une catégorie</a>
             </li>
           </ul>
         </li>

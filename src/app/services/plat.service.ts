@@ -44,7 +44,7 @@ export class PlatService {
   }
 
   getPlatById(id: number) {
-    const url = `${environment.api + 'plat/' + id}`;
+    const url = `${environment.api + 'plats/' + id}`;
     console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url).subscribe(

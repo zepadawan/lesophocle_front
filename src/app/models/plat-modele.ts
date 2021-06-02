@@ -3,7 +3,7 @@ export class Plat {
   libelle?: string;
   id_categorie?: number;
   prix?: string;
-  order?: number;
+  ordre?: number;
   poids_dimension?: string;
   description?: string;
   sous_titre?: string;

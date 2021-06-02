@@ -1,45 +1,51 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Categorie } from 'src/app/models/categorie-modele';
 import { Plat } from 'src/app/models/plat-modele';
+import { CategorieService } from 'src/app/services/categorie.service';
 import { PlatService } from 'src/app/services/plat.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'node-add-plat',
   templateUrl: './add-plat.component.html',
   styleUrls: ['./add-plat.component.css']
 })
+
 export class AddPlatComponent implements OnInit {
 
   platForm: FormGroup;
   errorMessage: string;
   successMessage: string = 'Saisir';
+  categories: Categorie[] = [];
+
+  @Input() htmlText: string;
   imagePreview: string;
-  loading: boolean;
-  userId: number;
 
   plats: Plat[] = [];
   platSubscription: Subscription;
+  page = "Administration";
   currentpage = "Ajouter un plat";
-  parentPage = "Admin";
+  parentPage = "Plat";
 
   constructor(private platService: PlatService,
+    private categorieService: CategorieService,
     private fb: FormBuilder,
-    private userService: UserService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.categories = this.categorieService.categories;
+
     this.initFormBuilder();
-    this.userId = this.userService.userId;
     this.platSubscription = this.platService.platSubject.subscribe(
       (data) => {
         this.plats = this.platService.plats;
       }
     )
     this.platService.emitPlats();
+
   };
 
   ngOnDestroy(): void {
@@ -51,11 +57,12 @@ export class AddPlatComponent implements OnInit {
       libelle: ['', [Validators.required]],
       categorie: ['', [Validators.required]],
       prix: ['', [Validators.required]],
-      poids_dimension: ['',],
+      ordre: ['',],
+      poidsDimension: ['',],
       description: ['',],
+      htmlText: ['',],
       sous_titre: ['',],
       sampleFile: ['',],
-      anneCreation: ['',],
 
 
     });
@@ -78,13 +85,13 @@ export class AddPlatComponent implements OnInit {
   }
 
   onSubmit() {
-    this.loading = true;
     const newPlat = new Plat();
     newPlat.libelle = this.platForm.get('libelle').value;
     newPlat.id_categorie = this.platForm.get('id_categorie').value;
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
+
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
     newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
 
@@ -99,7 +106,6 @@ export class AddPlatComponent implements OnInit {
           }, 3000);
         this.platForm.reset();
         this.router.navigate(['/accueil']);
-        this.loading = false;
 
       })
       .catch();
