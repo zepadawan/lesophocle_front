@@ -60,9 +60,10 @@ export class AddPlatComponent implements OnInit {
       ordre: ['',],
       poids_dimension: ['',],
       description: ['',],
-      htmlText: ['',],
       sous_titre: ['',],
       sampleFile: ['',],
+      actif: ['',],
+
 
 
     });
@@ -91,13 +92,15 @@ export class AddPlatComponent implements OnInit {
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
-
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
+    newPlat.actif = this.platForm.get('actif').value;
+
+    console.log('newPlat', newPlat);
+
     if (this.platForm.get('sampleFile').value) {
       newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
     }
 
-    console.log(newPlat);
     if (this.platForm.get('sampleFile').value) {
       this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
     }
