@@ -27,7 +27,6 @@ export class AppConfiguration {
 
   ensureInit(): Promise<any> {
     return new Promise((r, e) => {
-
       this.http.get("./assets/config/config.json")
         .subscribe(
           (content: AppConfiguration) => {

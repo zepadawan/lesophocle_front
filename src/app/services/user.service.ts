@@ -13,6 +13,8 @@ export class UserService {
   user: User;
   isAuth = false;
   isAdmin = true;
+  isSuperAdmin = false;
+
   userSubject = new Subject<User>();
   userId: number;
   token = "";
@@ -36,16 +38,15 @@ export class UserService {
         this.http.post(url, body).subscribe(
           (data: Result) => {
             if (data.status == 200) {
-              console.log(data);
               this.user = data.args;
               this.isAuth = true;
               this.role = this.user.role;
-              this.isAdmin = ((this.role == "admin") || (this.role == "superadmin") ? true : false)
+              this.isAdmin = ((this.role == "admin") || (this.role == "superadmin") ? true : false);
+              this.isSuperAdmin = ((this.role == "superadmin") ? true : false);
               this.userId = this.user.id;
               this.token = data.token
               resolve(data.result);
             } else {
-              console.log(data);
               reject(data.message);
             }
           },

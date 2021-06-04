@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { ConvertActionBindingResult } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Categorie } from '../models/categorie-modele';
 import { Plat } from '../models/plat-modele';
 import { Result } from '../models/result-modele';
 import { CategorieService } from './categorie.service';
@@ -30,8 +30,6 @@ export class PlatService {
 
   getPlatsFromServer(): any {
     const url = `${environment.api + 'plats'}`;
-    console.log(url);
-
     return this.http.get<any>(url).subscribe(
       (data: Result) => {
         this.plats = data.args;
@@ -63,17 +61,13 @@ export class PlatService {
   }
 
   createNewPlat(newPlat: Plat) {
-    const url = `${environment.api + 'plat/register'}`;
-    console.log(url);
-
+    const url = `${environment.api + 'plats/'}`;
     const body = {
       plat: newPlat
     }
-
     return new Promise((resolve, reject) => {
       this.http.post(url, body).subscribe(
         (data: Result) => {
-          console.log(data);
           if (data.status == 201) {
             resolve(data.args);
           } else {
@@ -89,8 +83,23 @@ export class PlatService {
     })
   }
 
+  deletePlat(id: number) {
+    const url = `${environment.api + 'plats/' + id}`;
+    return new Promise((resolve, reject) => {
+      this.http.delete(url).subscribe(
+        (data: Result) => {
+          resolve(data)
+          this.emitPlats();
+        },
+        (err) => {
+          reject(err);
+        }
+      )
+    })
+  }
+
   updatePlat(id: number, updatePlat: Plat) {
-    const url = `${environment.api + 'oeuvres/' + id}`;
+    const url = `${environment.api + 'plats/' + id}`;
     const body = {
       plat: updatePlat
     }
@@ -106,32 +115,18 @@ export class PlatService {
         }
       )
     })
-  }
-
-  // Afficahege par pages => Pagination
-  // getProductbyPage(numberPage: number): Tableau[] {
-
-  //   this.nomberOfPage = Math.trunc(this.tableaux.length / this.numberOfProductByPage);
-  //   if (numberPage > 0 || numberPage <= (this.nomberOfPage)) {
-  //     const prodResult = this.tableaux.slice(numberPage * this.numberOfProductByPage, (numberPage + 1) * this.numberOfProductByPage);
-  //     return prodResult;
-  //   }
-  //   return null;
-
-  // }
+  };
 
   saveImageOnServer(file: File, id_categorie: number) {
     const urlImage = `${environment.api_image}`;
     const apath = this.getPathOfImage(id_categorie);
 
-    const url = `${environment.api + 'upload' + id_categorie}`;
+    const url = `${environment.api + 'upload/' + id_categorie}`;
     console.log('url = ' + url);
     console.log(file);
     let formdata: any = new FormData();
     formdata.append("sampleFile", file)
     console.log('file = ' + file);
-
-
     this.http.post(url, formdata).subscribe(
       (data: Result) => {
         console.log(data);
@@ -145,21 +140,15 @@ export class PlatService {
   // helpers
   getPathOfImage(id_categorie: number): string {
     var aresult = "";
-    this.categorieService.getCategoryNameById(id_categorie)
-      .then((data: string) => {
+    this.categorieService.getCategorieNameById(id_categorie)
+      .then((data: Categorie) => {
         console.log(data);
-        aresult = data;
+        aresult = data.libelle;
       })
       .catch((err) => {
         console.log(err);
-
       });
-
-
-
     return aresult;
+  };
 
-
-
-  }
 }

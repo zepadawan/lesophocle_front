@@ -2,37 +2,35 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Categorie } from '../models/categorie-modele';
+import { Carte } from '../models/carte.model';
 import { Result } from '../models/result-modele';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategorieService {
-
-
-  categories: Categorie[] = [];
-  categorySubject = new Subject<Categorie[]>();
-  categorie: Categorie;
+export class CarteService {
+  cartes: Carte[] = [];
+  carteSubject = new Subject<Carte[]>();
+  carte: Carte;
 
   constructor(private http: HttpClient) {
-    this.getCategoriesFromServer();
+    this.getCartesFromServer();
   }
 
-  emitCategories() {
-    this.categorySubject.next(this.categories);
+  emitCartes() {
+    this.carteSubject.next(this.cartes);
   }
 
-  getCategoriesFromServer() {
-    const url = `${environment.api}` + 'categories';
+  getCartesFromServer() {
+    const url = `${environment.api}` + 'cartes';
     return new Promise((resolve, reject) => {
       this.http.get<any>(url).subscribe(
         (data: Result) => {
           if (data.status == 200) {
-            this.categories = data.args;
+            this.cartes = data.args;
             resolve(data.args)
           }
-          this.emitCategories();
+          this.emitCartes();
         },
         (err) => {
           reject(false)
@@ -41,14 +39,14 @@ export class CategorieService {
     })
   };
 
-  getCategorieNameById(id: number) {
-    const url = `${environment.api + 'categories/' + id}`;
+  getCarteNameById(id: number) {
+    const url = `${environment.api + 'cartes/' + id}`;
     console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url).subscribe(
         (data: Result) => {
           if (data.status == 200) {
-            this.categorie = data.args;
+            this.carte = data.args;
             resolve(data.args);
           } else {
             reject(data.message);
@@ -56,13 +54,10 @@ export class CategorieService {
         },
         (err) => {
           console.log(err);
+
         }
       )
     })
+
   };
-
-  getCategorieIdByName(libelle: string) {
-
-  }
-
 }

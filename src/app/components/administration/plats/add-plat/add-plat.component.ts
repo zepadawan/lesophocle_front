@@ -58,7 +58,7 @@ export class AddPlatComponent implements OnInit {
       categorie: ['', [Validators.required]],
       prix: ['', [Validators.required]],
       ordre: ['',],
-      poidsDimension: ['',],
+      poids_dimension: ['',],
       description: ['',],
       htmlText: ['',],
       sous_titre: ['',],
@@ -87,15 +87,20 @@ export class AddPlatComponent implements OnInit {
   onSubmit() {
     const newPlat = new Plat();
     newPlat.libelle = this.platForm.get('libelle').value;
-    newPlat.id_categorie = this.platForm.get('id_categorie').value;
+    newPlat.id_categorie = this.platForm.get('categorie').value;
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
 
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
-    newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
+    if (this.platForm.get('sampleFile').value) {
+      newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
+    }
 
-    this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
+    console.log(newPlat);
+    if (this.platForm.get('sampleFile').value) {
+      this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
+    }
     this.platService.createNewPlat(newPlat)
       .then((data) => {
         console.log('New Plat OK');
@@ -103,17 +108,19 @@ export class AddPlatComponent implements OnInit {
         setTimeout(
           () => {
             this.successMessage = null;
+            this.platForm.reset();
+            this.router.navigate(['/accueil']);
           }, 3000);
-        this.platForm.reset();
-        this.router.navigate(['/accueil']);
 
       })
       .catch();
+    // this.plats = this.platService.getPlatsFromServer();
   }
+
 
   onExit() {
     this.platForm.reset();
-    this.router.navigate(['/administration']);
+    this.router.navigate(['/accueil']);
   }
 
 

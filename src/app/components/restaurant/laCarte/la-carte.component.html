@@ -1,1 +1,35 @@
-<p>la-carte works!</p>
+<node-header></node-header>
+
+<!-- <node-carousel></node-carousel> -->
+
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" style="width: 80%;">{{platType}}</th>
+          <th scope="col">Prix</th>
+          <th scope="col" *ngIf="isAdmin">Admin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plat of plats; let index = index">
+          <th scope="row" *ngIf="isAdmin">{{plat.ordre}}</th>
+          <th scope="row" *ngIf="!isAdmin"> - </th>
+          <td style="width: 500px; height: auto;">
+            <p>{{ plat.libelle}}</p>
+            <p class="plat-description">{{ plat.description}} </p>
+          </td>
+          <td>{{ plat.prix}} €</td>
+          <td>
+            <button *ngIf="isAdmin" class="pro-btn" title="Editer" [routerLink]="['/edit-plat',plat.id]"><i
+                class="ion-android-create"></i></button>
+            <button *ngIf="isAdmin" class="pro-btn" title="Supprimer" [routerLink]="['/edit-plat',plat.id]"><i
+                class="ion-android-delete"></i></button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>

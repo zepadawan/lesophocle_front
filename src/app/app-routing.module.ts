@@ -9,7 +9,6 @@ import { EditPlatComponent } from './components/administration/plats/edit-plat/e
 import { HomeComponent } from './components/gui/home/home.component';
 import { NotFoundComponent } from './components/gui/not-found/not-found.component';
 import { NousEcrireComponent } from './components/gui/nous-ecrire/nous-ecrire.component';
-import { ClickAndCollectComponent } from './components/restaurant/click-and-collect/click-and-collect.component';
 import { LaCarteComponent } from './components/restaurant/laCarte/la-carte.component';
 
 import { LesBoissonsComponent } from './components/restaurant/lesBoissons/les-boissons.component';
@@ -17,21 +16,19 @@ import { LesDessertsComponent } from './components/restaurant/lesDesserts/les-de
 import { LesSoireesPriveesComponent } from './components/restaurant/lesSoireesPrivees/les-soirees-privees.component';
 import { LesSoireesComponent } from './components/restaurant/lesConcerts/les-soirees.component';
 import { AuthGuard } from './services/auth.guard.service';
-import { LesViandesComponent } from './components/restaurant/laCarte/les-viandes/les-viandes.component';
+import { CarouselComponent } from './components/gui/carousel/carousel.component';
 
 const routes: Routes = [
 
   { path: 'accueil', component: HomeComponent },
-  { path: 'laCarte', component: LaCarteComponent },
-  { path: 'lesViandes', component: LesViandesComponent },
+  { path: 'laCarte/:id', component: LaCarteComponent },
+  { path: 'carousel', component: CarouselComponent },
   { path: 'lesBoissons', component: LesBoissonsComponent },
   { path: 'lesDesserts', component: LesDessertsComponent },
   { path: 'lesSoirees', component: LesSoireesComponent },
   { path: 'lesPrivees', component: LesSoireesPriveesComponent },
-  { path: 'click&collect', component: ClickAndCollectComponent, canActivate: [AuthGuard] },
   { path: 'nousEcrire', component: NousEcrireComponent, canActivate: [AuthGuard] },
   { path: 'connexion', component: LoginComponent },
-
   { path: 'administration', component: AdministrationComponent, canActivate: [AuthGuard] },
   { path: 'add-plat', component: AddPlatComponent, },
   { path: 'edit-plat/:id', component: EditPlatComponent, canActivate: [AuthGuard] },

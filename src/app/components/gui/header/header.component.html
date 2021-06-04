@@ -81,7 +81,13 @@
       <ul class="navbar-nav mr-auto main-menu d-flex text-dark">
         <li routerLinkActive="active"><a routerLink="/accueil">Accueil</a></li>
         <li routerLinkActive="active"><a routerLink="/notFound">La Carte</a>
-          <ul class="sub-menu" style="width :100px">
+          <ul class="sub-menu">
+            <li *ngFor="let cat of categories">
+              <a [routerLink]="['/laCarte', cat.id]">{{cat.libelle}}</a>
+            </li>
+          </ul>
+        </li>
+        <!-- <ul class="sub-menu" style="width :100px">
             <li>
               <a routerLink="/notFound">Les Entrées</a>
             </li>
@@ -96,16 +102,20 @@
             </li>
             <li>
               <a routerLink="/lesViandes">Les Viandes</a>
-            </li>
-            <li>
-              <a routerLink="/notFound">Les Desserts</a>
-            </li>
-          </ul>
-
+              <!-- <a [routerLink]="['/category', cat.id]">Les Desserts</a>
+        <a [routerLink]="['/categorie', 1]">Les Viandes</a>
         </li>
+        <li>
+          <a routerLink="/lesDesserts">Les Desserts</a>
+        </li>
+      </ul>
+      -->
         <li routerLinkActive="active"><a routerLink="/notFound">Les Formules et Menus</a>
           <ul class="sub-menu" style="width :100px">
-            <li>
+            <li *ngFor="let carte of cartes">
+              <a [routerLink]="['/carte.libelle', carte.id]">{{carte.libelle}}</a>
+            </li>
+            <!-- <li>
               <a routerLink="/notFound">Les Formules</a>
             </li>
             <li>
@@ -121,8 +131,8 @@
               <a routerLink="/notFound">Menu Enfant</a>
             </li>
             <li>
-              <a routerLink="/notFound">Desserts et Fromages</a>
-            </li>
+              <a routerLink="/notFound">Desserts et Fromages</a> 
+            </li> -->
           </ul>
 
         </li>
@@ -137,10 +147,10 @@
         <li routerLinkActive="active"><a routerLink="/notFound">Administration</a>
           <ul class="sub-menu" style="width :100px">
             <li>
-              <a routerLink="/addPlat">Ajouter un Plat</a>
+              <a routerLink="/add-plat">Ajouter un Plat</a>
             </li>
             <li>
-              <a routerLink="/addCategorie">Ajouter une catégorie</a>
+              <a routerLink="/add-categorie">Ajouter une catégorie</a>
             </li>
           </ul>
         </li>

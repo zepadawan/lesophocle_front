@@ -42,6 +42,7 @@ export class EditPlatComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.categories = this.categorieService.categories;
+    console.log(this.categories);
     this.initFormBuilder();
     this.platSubscription = this.route.params.subscribe(
       (params: Params) => {
@@ -108,32 +109,38 @@ export class EditPlatComponent implements OnInit, OnDestroy {
     const newPlat = new Plat();
     const idPlat = this.plat.id;
     newPlat.libelle = this.platForm.get('libelle').value;
-    newPlat.id_categorie = this.platForm.get('id_categorie').value;
+    newPlat.id_categorie = this.platForm.get('categorie').value;
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
 
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
-    newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
+    console.log('image', this.platForm.get('sampleFile').value);
 
-    this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
+    if (this.platForm.get('sampleFile').value) {
+      newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
+    }
+
+    //    this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
     this.platService.updatePlat(idPlat, newPlat)
       .then((data) => {
         this.successMessage = 'le  plat : ' + newPlat.libelle + '  est modifié';
         setTimeout(
           () => {
             this.successMessage = null;
+            this.platForm.reset();
+            this.router.navigate(['/accueil']);
+            this.platService.emitPlats();
           }, 3000);
-        this.platForm.reset();
-        this.router.navigate(['/administration']);
 
       })
       .catch();
+    // this.plats = this.platService.getPlatsFromServer();
   }
 
   onExit() {
     this.platForm.reset();
-    this.router.navigate(['/administration']);
+    this.router.navigate(['/accueil']);
   }
 
 }

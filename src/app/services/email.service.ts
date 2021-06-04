@@ -15,7 +15,6 @@ export class EmailService {
   sendMessage(email: Email) {
     const url = environment.api + 'email';
     return new Promise((resolve, reject) => {
-
       this.http.post(url, email).subscribe(
         (data: Result) => {
           if (data.status == 200) {
