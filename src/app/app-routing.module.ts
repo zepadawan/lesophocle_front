@@ -4,8 +4,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { AddCategorieComponent } from './components/administration/categories/add-categorie/add-categorie.component';
 import { EditCategorieComponent } from './components/administration/categories/edit-categorie/edit-categorie.component';
-import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
-import { EditPlatComponent } from './components/administration/plats/edit-plat/edit-plat.component';
 import { HomeComponent } from './components/gui/home/home.component';
 import { NotFoundComponent } from './components/gui/not-found/not-found.component';
 import { NousEcrireComponent } from './components/gui/nous-ecrire/nous-ecrire.component';
@@ -16,6 +14,8 @@ import { LesDessertsComponent } from './components/restaurant/lesDesserts/les-de
 import { LesSoireesPriveesComponent } from './components/restaurant/lesSoireesPrivees/les-soirees-privees.component';
 import { LesSoireesComponent } from './components/restaurant/lesConcerts/les-soirees.component';
 import { AuthGuard } from './services/auth.guard.service';
+import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
+import { EditPlatComponent } from './components/administration/plats/edit-plat/edit-plat.component';
 
 const routes: Routes = [
 

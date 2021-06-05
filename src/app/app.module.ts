@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-// import { NgbCarouselConfig, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,13 +22,10 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HeaderAdminComponent } from './components/gui/header-admin/header-admin.component';
 
 // Google
-import { GoogleMapsModule } from '@angular/google-maps';
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
-import { EditPlatComponent } from './components/administration/plats/edit-plat/edit-plat.component';
 import { EditCategorieComponent } from './components/administration/categories/edit-categorie/edit-categorie.component';
 import { AddCategorieComponent } from './components/administration/categories/add-categorie/add-categorie.component';
-import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
 import { environment } from 'src/environments/environment';
 import { AppConfiguration } from './services/config-helper.service';
 import { LesFormaulesComponent } from './components/restaurant/lesMenus/les-formaules/les-formaules.component';
@@ -38,7 +34,8 @@ import { LeMenuBrasserieComponent } from './components/restaurant/lesMenus/le-me
 import { LeMenuPizzaComponent } from './components/restaurant/lesMenus/le-menu-pizza/le-menu-pizza.component';
 import { LeMenuEnfantComponent } from './components/restaurant/lesMenus/le-menu-enfant/le-menu-enfant.component';
 import { LesDessertsEtFromagesComponent } from './components/restaurant/lesMenus/les-desserts-et-fromages/les-desserts-et-fromages.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditPlatComponent } from './components/administration/plats/edit-plat/edit-plat.component';
+import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
 
 // Déclaration de la fonction d'initialisation de la configuration
 // export function initConfig(configService: ConfigHelperService) {
@@ -64,6 +61,9 @@ export function AppConfigurationFactory(
     HeaderComponent,
     FooterComponent,
     LaCarteComponent,
+    EditPlatComponent,
+    AddPlatComponent,
+
     LesBoissonsComponent,
     LesDessertsComponent,
     NousEcrireComponent,
@@ -75,8 +75,6 @@ export function AppConfigurationFactory(
     LoginComponent,
     RegisterComponent,
     HeaderAdminComponent,
-    AddPlatComponent,
-    EditPlatComponent,
     EditCategorieComponent,
     AddCategorieComponent,
     LesFormaulesComponent,
@@ -92,14 +90,13 @@ export function AppConfigurationFactory(
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     EditorModule,
-    NgbModule,
+
 
   ],
   providers: [

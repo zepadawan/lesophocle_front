@@ -19,11 +19,13 @@ export class EditPlatComponent implements OnInit, OnDestroy {
   platForm: FormGroup;
   errorMessage: string;
   successMessage: string = 'Modifier';
+  categories: Categorie[] = [];
+
+  @Input() htmlText: string;
   imagePreview: string;
 
   plat: Plat;
   plats: Plat[] = [];
-  categories: Categorie[] = [];
   platSubscription: Subscription;
 
   page = "Administration";
@@ -115,12 +117,6 @@ export class EditPlatComponent implements OnInit, OnDestroy {
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
-<<<<<<< HEAD
-    newPlat.ordre = this.platForm.get('ordre').value;
-
-
-=======
->>>>>>> a495682aef310dee61964179d63a3a98dabd470d
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
     newPlat.actif = this.platForm.get('actif').value;
 
@@ -130,9 +126,7 @@ export class EditPlatComponent implements OnInit, OnDestroy {
       newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
     }
 
-    if (this.platForm.get('sampleFile').value) {
-      this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
-    }
+    //    this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
     this.platService.updatePlat(idPlat, newPlat)
       .then((data) => {
         this.successMessage = 'le  plat : ' + newPlat.libelle + '  est modifié';
@@ -142,10 +136,11 @@ export class EditPlatComponent implements OnInit, OnDestroy {
             this.platForm.reset();
             this.router.navigate(['/accueil']);
             this.platService.emitPlats();
-          }, 2000);
+          }, 3000);
 
       })
       .catch();
+    // this.plats = this.platService.getPlatsFromServer();
   }
 
   onExit() {
