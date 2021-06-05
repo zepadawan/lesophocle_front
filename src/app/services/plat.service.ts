@@ -117,16 +117,14 @@ export class PlatService {
     })
   };
 
-  saveImageOnServer(file: File, id_categorie: number) {
+  saveImageOnServer(file: File, categName: string) {
     const urlImage = `${environment.api_image}`;
-    const apath = this.getPathOfImage(id_categorie);
-
-    const url = `${environment.api + 'upload/' + id_categorie}`;
+    const url = `${environment.api + 'upload/'}`;
     console.log('url = ' + url);
     console.log(file);
     let formdata: any = new FormData();
-    formdata.append("sampleFile", file)
-    console.log('file = ' + file);
+    formdata.append("sampleFile", file);
+    formdata.append("pathImage", categName);
     this.http.post(url, formdata).subscribe(
       (data: Result) => {
         console.log(data);

@@ -20,9 +20,11 @@ export class EditPlatComponent implements OnInit, OnDestroy {
   errorMessage: string;
   successMessage: string = 'Modifier';
   categories: Categorie[] = [];
+  categName: string;
 
   @Input() htmlText: string;
   imagePreview: string;
+  pathPreview = '';
 
   plat: Plat;
   plats: Plat[] = [];
@@ -62,9 +64,20 @@ export class EditPlatComponent implements OnInit, OnDestroy {
                 sous_titre: [this.plat.sous_titre,],
                 sampleFile: [this.plat.nom_image,],
                 actif: [this.plat.actif,],
-
               });
-              this.imagePreview = `${environment.api_image}` + this.plat.nom_image;
+              console.log('this.plat.id_categorie', this.plat.id_categorie);
+              this.categorieService.getCategorieNameById(this.plat.id_categorie)
+                .then((data: Categorie) => {
+                  console.log('data', data);
+                  this.categName = data.pathImage;
+                  console.log('categName', this.categName);
+                  this.pathPreview = `${environment.api_image}` + this.categName + '/' + this.plat.nom_image;
+                  console.log('pathPreview :', this.pathPreview);
+                  this.imagePreview = this.pathPreview;
+                })
+                .catch();
+
+
             }
           )
           .catch();
@@ -87,7 +100,6 @@ export class EditPlatComponent implements OnInit, OnDestroy {
       htmlText: ['',],
       sous_titre: ['',],
       sampleFile: ['',],
-      actif: ['',],
 
 
     });
@@ -118,7 +130,7 @@ export class EditPlatComponent implements OnInit, OnDestroy {
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
-    newPlat.actif = this.platForm.get('actif').value;
+    newPlat.ordre = this.platForm.get('ordre').value;
 
     console.log('image', this.platForm.get('sampleFile').value);
 
@@ -126,7 +138,10 @@ export class EditPlatComponent implements OnInit, OnDestroy {
       newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
     }
 
-    //    this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, newPlat.id_categorie);
+    if (this.platForm.get('sampleFile').value) {
+      console.log('on save pathPreview :', this.pathPreview);
+      this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, this.categName);
+    }
     this.platService.updatePlat(idPlat, newPlat)
       .then((data) => {
         this.successMessage = 'le  plat : ' + newPlat.libelle + '  est modifié';
@@ -140,7 +155,6 @@ export class EditPlatComponent implements OnInit, OnDestroy {
 
       })
       .catch();
-    // this.plats = this.platService.getPlatsFromServer();
   }
 
   onExit() {

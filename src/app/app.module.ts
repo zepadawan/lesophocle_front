@@ -24,6 +24,7 @@ import { HeaderAdminComponent } from './components/gui/header-admin/header-admin
 // Google
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
+
 import { EditCategorieComponent } from './components/administration/categories/edit-categorie/edit-categorie.component';
 import { AddCategorieComponent } from './components/administration/categories/add-categorie/add-categorie.component';
 import { environment } from 'src/environments/environment';
