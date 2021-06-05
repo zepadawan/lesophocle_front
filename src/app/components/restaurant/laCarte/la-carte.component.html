@@ -23,6 +23,8 @@
           </td>
           <td>{{ plat.prix}} €</td>
           <td>
+            <button *ngIf="!plat.nom_image" class="pro-btn" title="Voir" [routerLink]="['/show-plat',plat.id]"><i
+                class="ion-images"></i></button>
             <button *ngIf="isAdmin" class="pro-btn" title="Editer" [routerLink]="['/edit-plat',plat.id]"><i
                 class="ion-android-create"></i></button>
             <button *ngIf="isAdmin" class="pro-btn" title="Supprimer" [routerLink]="['/edit-plat',plat.id]"><i

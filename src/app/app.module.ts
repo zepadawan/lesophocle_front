@@ -38,7 +38,6 @@ import { LeMenuBrasserieComponent } from './components/restaurant/lesMenus/le-me
 import { LeMenuPizzaComponent } from './components/restaurant/lesMenus/le-menu-pizza/le-menu-pizza.component';
 import { LeMenuEnfantComponent } from './components/restaurant/lesMenus/le-menu-enfant/le-menu-enfant.component';
 import { LesDessertsEtFromagesComponent } from './components/restaurant/lesMenus/les-desserts-et-fromages/les-desserts-et-fromages.component';
-import { CarouselComponent } from './components/gui/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Déclaration de la fonction d'initialisation de la configuration
@@ -86,7 +85,7 @@ export function AppConfigurationFactory(
     LeMenuPizzaComponent,
     LeMenuEnfantComponent,
     LesDessertsEtFromagesComponent,
-    CarouselComponent,
+
 
 
   ],

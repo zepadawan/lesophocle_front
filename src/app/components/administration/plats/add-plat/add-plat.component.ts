@@ -20,10 +20,9 @@ export class AddPlatComponent implements OnInit {
   successMessage: string = 'Saisir';
   categories: Categorie[] = [];
 
-  @Input() htmlText: string;
   imagePreview: string;
 
-  plats: Plat[] = [];
+  @Input() plats: Plat[] = [];
   platSubscription: Subscription;
   page = "Administration";
   currentpage = "Ajouter un plat";
@@ -91,8 +90,9 @@ export class AddPlatComponent implements OnInit {
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
-
+    newPlat.ordre = this.platForm.get('ordre').value;
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
+
     if (this.platForm.get('sampleFile').value) {
       newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
     }
@@ -110,11 +110,10 @@ export class AddPlatComponent implements OnInit {
             this.successMessage = null;
             this.platForm.reset();
             this.router.navigate(['/accueil']);
-          }, 3000);
+          }, 2000);
 
       })
       .catch();
-    // this.plats = this.platService.getPlatsFromServer();
   }
 
 

@@ -66,7 +66,7 @@ export class PlatService {
       plat: newPlat
     }
     return new Promise((resolve, reject) => {
-      this.http.post(url, body).subscribe(
+      this.http.post(url, newPlat).subscribe(
         (data: Result) => {
           if (data.status == 201) {
             resolve(data.args);

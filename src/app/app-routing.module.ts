@@ -16,13 +16,11 @@ import { LesDessertsComponent } from './components/restaurant/lesDesserts/les-de
 import { LesSoireesPriveesComponent } from './components/restaurant/lesSoireesPrivees/les-soirees-privees.component';
 import { LesSoireesComponent } from './components/restaurant/lesConcerts/les-soirees.component';
 import { AuthGuard } from './services/auth.guard.service';
-import { CarouselComponent } from './components/gui/carousel/carousel.component';
 
 const routes: Routes = [
 
   { path: 'accueil', component: HomeComponent },
   { path: 'laCarte/:id', component: LaCarteComponent },
-  { path: 'carousel', component: CarouselComponent },
   { path: 'lesBoissons', component: LesBoissonsComponent },
   { path: 'lesDesserts', component: LesDessertsComponent },
   { path: 'lesSoirees', component: LesSoireesComponent },
