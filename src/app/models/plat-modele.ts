@@ -7,5 +7,6 @@ export class Plat {
   poids_dimension?: string;
   description?: string;
   sous_titre?: string;
-  nom_image?: string
+  nom_image?: string;
+  actif?: number;
 }

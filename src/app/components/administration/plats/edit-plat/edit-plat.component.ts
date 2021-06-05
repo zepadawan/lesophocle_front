@@ -59,6 +59,8 @@ export class EditPlatComponent implements OnInit, OnDestroy {
                 htmlText: ['',],
                 sous_titre: [this.plat.sous_titre,],
                 sampleFile: [this.plat.nom_image,],
+                actif: [this.plat.actif,],
+
               });
               this.imagePreview = `${environment.api_image}` + this.plat.nom_image;
             }
@@ -83,6 +85,8 @@ export class EditPlatComponent implements OnInit, OnDestroy {
       htmlText: ['',],
       sous_titre: ['',],
       sampleFile: ['',],
+      actif: ['',],
+
 
     });
   }
@@ -111,10 +115,15 @@ export class EditPlatComponent implements OnInit, OnDestroy {
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
+<<<<<<< HEAD
     newPlat.ordre = this.platForm.get('ordre').value;
 
 
+=======
+>>>>>>> a495682aef310dee61964179d63a3a98dabd470d
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
+    newPlat.actif = this.platForm.get('actif').value;
+
     console.log('image', this.platForm.get('sampleFile').value);
 
     if (this.platForm.get('sampleFile').value) {
