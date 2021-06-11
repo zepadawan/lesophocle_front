@@ -101,7 +101,7 @@
         <li routerLinkActive="active"><a routerLink="/notFound">privatisation</a></li>
         <li routerLinkActive="active" *ngIf="!isAdmin"><a routerLink="/notFound">click & collect</a></li>
         <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/nousEcrire">Nous écrire</a></li>
-        <li routerLinkActive="active"><a routerLink="/localize">Nous trouver</a></li>
+        <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/localize">Nous trouver</a></li>
         <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/connexion">Connexion</a></li>
         <li routerLinkActive="active" *ngIf="isAuth"><a routerLink="/connexion">Déconnexion</a></li>
         <li routerLinkActive="active"><a routerLink="/administration">Administration</a>
