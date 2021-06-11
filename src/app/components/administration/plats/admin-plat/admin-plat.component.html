@@ -1,0 +1,47 @@
+<node-header></node-header>
+
+<!-- <node-carousel></node-carousel> -->
+
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Ordre</th>
+          <th scope="col" style="width: 60%;">{{platType}}</th>
+          <th scope="col">Prix</th>
+          <th scope="col" *ngIf="isAdmin">Administration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plat of plats; let index = index">
+          <th scope="row" *ngIf="isAdmin">{{plat.ordre}}</th>
+          <th scope="row" *ngIf="!isAdmin"> - </th>
+          <td style="width: 500px; height: auto;">
+            <p>{{ plat.libelle}}</p>
+            <p class="plat-description">{{ plat.description}} </p>
+            <p class="plat-description">{{ plat.sous_titre}}</p>
+            <p class="plat-description">{{ plat.poids_dimension}}</p>
+
+          </td>
+          <td>{{ plat.prix}} €</td>
+          <td>
+            <button *ngIf="plat.nom_image" class="pro-btn" title="Afficher l'image"
+              [routerLink]="['/show-plat',plat.id]"><i class="ion-images"></i></button>
+
+            <button *ngIf="isAdmin" class="pro-btn" title="Editer" [routerLink]="['/edit-plat',plat.id]"><i
+                class="ion-android-create"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div class="form-group row pb-3 text-center"> -->
+    <div class="text-center">
+      <div class="col-md-6 offset-md-3">
+        <div class="sign-btn">
+          <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/add-plat']"
+            routerLinkActive="router-link-active">Création</button>
+        </div>
+      </div>
+    </div>
+  </div>

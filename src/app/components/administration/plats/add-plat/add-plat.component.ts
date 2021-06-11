@@ -16,6 +16,7 @@ import { PlatService } from 'src/app/services/plat.service';
 export class AddPlatComponent implements OnInit {
 
   platForm: FormGroup;
+  currentCategorie: number;
   errorMessage: string;
   successMessage: string = 'Saisir';
   categories: Categorie[] = [];
@@ -86,6 +87,7 @@ export class AddPlatComponent implements OnInit {
     const newPlat = new Plat();
     newPlat.libelle = this.platForm.get('libelle').value;
     newPlat.id_categorie = this.platForm.get('categorie').value;
+    this.currentCategorie = newPlat.id_categorie;
     newPlat.prix = this.platForm.get('prix').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
@@ -99,7 +101,14 @@ export class AddPlatComponent implements OnInit {
     }
 
     if (this.platForm.get('sampleFile').value) {
-      //      this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, this.categName);
+      this.categorieService.getCategorieNameById(newPlat.id_categorie)
+        .then((data: Categorie) => {
+          console.log('data', data);
+          this.categName = data.pathImage;
+          this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, this.categName);
+        })
+        .catch();
+
     }
     this.platService.createNewPlat(newPlat)
       .then((data) => {
@@ -109,18 +118,17 @@ export class AddPlatComponent implements OnInit {
           () => {
             this.successMessage = null;
             this.platForm.reset();
-            this.router.navigate(['/accueil']);
-          }, 3000);
+            this.router.navigate(['/admin-plat/' + this.currentCategorie]);
+          }, 1000);
 
       })
       .catch();
-    // this.plats = this.platService.getPlatsFromServer();
   }
 
 
   onExit() {
     this.platForm.reset();
-    this.router.navigate(['/accueil']);
+    this.router.navigate(['/administration']);
   }
 
 

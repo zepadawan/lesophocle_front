@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { nextTick } from 'process';
+import { timeout } from 'rxjs/operators';
 import { Email } from 'src/app/models/email.model';
 import { EmailService } from 'src/app/services/email.service';
 import { UserService } from 'src/app/services/user.service';
@@ -48,7 +49,14 @@ export class NousEcrireComponent implements OnInit {
     this.emailServices.sendMessage(newEemail)
       .then(() => {
         console.log('mail send OK !');
-        this.router.navigate(['/accueil']);
+        this.successMessage = 'Mail envoyé!';
+        setTimeout(
+          () => {
+            this.successMessage = "";
+            this.router.navigate(['/accueil']);
+          }
+          , 1000);
+
       })
       .catch();
   }

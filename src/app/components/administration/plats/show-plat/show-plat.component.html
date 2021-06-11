@@ -1,0 +1,40 @@
+<!-- <node-header-admin [page]="page" [parentPage]="parentPage" [currentPage]="currentpage"></node-header-admin> -->
+<node-header></node-header>
+
+<div class="col-sm-6 offset-sm-3 mt-2">
+
+  <div class="row" *ngIf="plat">
+    <div class="col-md-4">
+      <div class="image-preview" *ngIf="imagePreview">
+        <li>
+          <a [routerLink]="['/show-image', plat.id]" routerLinkActive="router-link-active">
+            <img [src]="imagePreview" alt="Image du plat">
+            <span data-placement="bottom " title="Agrandir" class="icon-magnifier "></span>
+          </a>
+        </li>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div>
+        <label>{{plat.libelle}}</label>
+      </div>
+      <div>
+        <label>{{plat.prix}} €</label>
+      </div>
+      <div>
+        <label for="description">{{plat.description}}</label>
+      </div>
+      <div>
+        <label for="Poids/diemension">{{plat.poids_dimension}}</label>
+      </div>
+      <div>
+        <label for="information">{{plat.sous_titre}}</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center col-md-8">
+  <button type="button" [routerLink]="['/laCarte/', plat.id_categorie]" routerLinkActive="router-link-active"
+    class=" text-center btn theme-btn--dark1 btn--md m-2">Fermer</button>
+</div>

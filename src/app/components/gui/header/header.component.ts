@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   @Input() isAuth = false;
   @Input() user: User;
   @Input() isAdmin = false;
-  @Input() isSuperAdmin = false;
+  @Input() isSuperAdmin = true;
 
 
 

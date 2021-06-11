@@ -2050,7 +2050,8 @@ top-nav-style1 start
 .sub-menu {
     position: absolute;
     padding: 0;
-    min-width: 240px;
+    /* min-width: 240px; */
+    min-width: 220px;
     z-index: 4;
     -webkit-box-shadow: 0 0 3.76px 0.24px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 3.76px 0.24px rgba(0, 0, 0, 0.15);
@@ -3603,7 +3604,7 @@ img.second-img {
 .pro-btn {
     background: #f6f6f6;
     color: #1d1d1d;
-    width: 40px;
+    width: 50px;
     height: 40px;
     text-align: center;
     font-weight: 400;

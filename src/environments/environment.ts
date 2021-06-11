@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   api: 'https://lesophocle.com:8082/',
   api_image: 'https://lesophocle.com:8082/public/images/',
+  emailTo: '',
 };
 
 /*

@@ -3,35 +3,43 @@
 <!-- <node-carousel></node-carousel> -->
 
 <div class="container">
-  <div class="table-responsive">
-    <table class="table table-hover">
+  <div class="table-responsive ">
+    <table class="table table-hover table-striped">
       <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col" style="width: 80%;">{{platType}}</th>
-          <th scope="col">Prix</th>
-          <th scope="col" *ngIf="isAdmin">Admin</th>
+        <tr class="m-0">
+          <th class="w-90">{{platType}}</th>
+          <th class="w-10">Prix</th>
+          <th class="w-10">Détail / Image</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let plat of plats; let index = index">
-          <th scope="row" *ngIf="isAdmin">{{plat.ordre}}</th>
-          <th scope="row" *ngIf="!isAdmin"> - </th>
-          <td style="width: 500px; height: auto;">
-            <p>{{ plat.libelle}}</p>
-            <p class="plat-description">{{ plat.description}} </p>
+        <tr *ngFor="let plat of plats; let index = index" class="m-0">
+          <td class="w-90" *ngIf="plat.actif">
+            <h5 class="" style="font-style: italic;">{{ plat.libelle}} </h5>
+            <ul>
+              <li class="plat-description">{{ plat.description}}</li>
+              <li class="plat-description">{{ plat.sous_titre}}</li>
+              <li class="plat-description">{{ plat.poids_dimension}}</li>
+            </ul>
           </td>
-          <td>{{ plat.prix}} €</td>
-          <td>
-            <button *ngIf="plat.nom_image" class="pro-btn" title="Afficher l'image"
-              [routerLink]="['/show-plat',plat.id]"><i class="ion-images"></i></button>
-            <button *ngIf="isAdmin" class="pro-btn" title="Editer" [routerLink]="['/edit-plat',plat.id]"><i
-                class="ion-android-create"></i></button>
-            <button *ngIf="isAdmin" class="pro-btn" title="Supprimer" [routerLink]="['/edit-plat',plat.id]"><i
-                class="ion-android-delete"></i></button>
+          <td class="w-10" *ngIf="plat.actif">
+            {{plat.prix}} €
+          </td>
+          <td class="m-10" *ngIf="plat.actif && plat.nom_image" [routerLink]="['/show-plat',plat.id]"
+            style="cursor: pointer;">
+            <button *ngIf=" plat.nom_image" class="pro-btn" title="Afficher l'image"><i class="ion-images"></i></button>
           </td>
         </tr>
       </tbody>
-
     </table>
+    <div class="text-center">
+      <div class="col-md-6 offset-md-3">
+        <div class="sign-btn">
+          <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/accueil']"
+            routerLinkActive="router-link-active">
+            Retour à l'accueil</button>
+        </div>
+      </div>
+    </div>
+
   </div>

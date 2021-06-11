@@ -61,8 +61,5 @@ export class CategorieService {
     })
   };
 
-  getCategorieIdByName(libelle: string) {
-
-  }
 
 }

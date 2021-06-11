@@ -16,6 +16,11 @@ import { LesSoireesComponent } from './components/restaurant/lesConcerts/les-soi
 import { AuthGuard } from './services/auth.guard.service';
 import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
 import { EditPlatComponent } from './components/administration/plats/edit-plat/edit-plat.component';
+import { AdminPlatComponent } from './components/administration/plats/admin-plat/admin-plat.component';
+import { AdminCategorieComponent } from './components/administration/categories/admin-categorie/admin-categorie.component';
+import { ShowPlatComponent } from './components/administration/plats/show-plat/show-plat.component';
+import { ShowImageComponent } from './components/administration/show-image/show-image.component';
+// import { LocalizeComponent } from './components/gui/localize/localize.component';
 
 const routes: Routes = [
 
@@ -26,10 +31,17 @@ const routes: Routes = [
   { path: 'lesSoirees', component: LesSoireesComponent },
   { path: 'lesPrivees', component: LesSoireesPriveesComponent },
   { path: 'nousEcrire', component: NousEcrireComponent, canActivate: [AuthGuard] },
+  // { path: 'localize', component: LocalizeComponent, canActivate: [AuthGuard] },
   { path: 'connexion', component: LoginComponent },
   { path: 'administration', component: AdministrationComponent, canActivate: [AuthGuard] },
+
+  { path: 'admin-plat/:id', component: AdminPlatComponent, },
   { path: 'add-plat', component: AddPlatComponent, },
   { path: 'edit-plat/:id', component: EditPlatComponent, canActivate: [AuthGuard] },
+  { path: 'show-plat/:id', component: ShowPlatComponent, },
+  { path: 'show-image/:id', component: ShowImageComponent, canActivate: [AuthGuard] },
+
+  { path: 'admin-categorie', component: AdminCategorieComponent, },
   { path: 'add-categorie', component: AddCategorieComponent, canActivate: [AuthGuard] },
   { path: 'edit-categorie/:id', component: EditCategorieComponent, canActivate: [AuthGuard] },
 

@@ -1,0 +1,32 @@
+<node-header></node-header>
+
+<!-- <node-carousel></node-carousel> -->
+
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 10%;">#</th>
+          <th scope="col" style="width: 50%;">Libellé</th>
+          <th scope="col" style="width: 50%;">Administration</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categ of categories; let index = index">
+          <th scope="row" *ngIf="isAdmin">{{categ.id}}</th>
+          <th scope="row" *ngIf="isAdmin">{{categ.libelle}}</th>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div class="form-group row pb-3 text-center"> -->
+    <div class="text-center">
+      <div class="col-md-6 offset-md-3">
+        <div class="sign-btn">
+          <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/add-plat']"
+            routerLinkActive="router-link-active">Création</button>
+        </div>
+      </div>
+    </div>
+  </div>

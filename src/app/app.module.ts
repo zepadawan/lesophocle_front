@@ -27,8 +27,6 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { EditCategorieComponent } from './components/administration/categories/edit-categorie/edit-categorie.component';
 import { AddCategorieComponent } from './components/administration/categories/add-categorie/add-categorie.component';
-import { environment } from 'src/environments/environment';
-import { AppConfiguration } from './services/config-helper.service';
 import { LesFormaulesComponent } from './components/restaurant/lesMenus/les-formaules/les-formaules.component';
 import { LesMenusComponent } from './components/restaurant/lesMenus/les-menus/les-menus.component';
 import { LeMenuBrasserieComponent } from './components/restaurant/lesMenus/le-menu-brasserie/le-menu-brasserie.component';
@@ -37,20 +35,17 @@ import { LeMenuEnfantComponent } from './components/restaurant/lesMenus/le-menu-
 import { LesDessertsEtFromagesComponent } from './components/restaurant/lesMenus/les-desserts-et-fromages/les-desserts-et-fromages.component';
 import { EditPlatComponent } from './components/administration/plats/edit-plat/edit-plat.component';
 import { AddPlatComponent } from './components/administration/plats/add-plat/add-plat.component';
-
-// Déclaration de la fonction d'initialisation de la configuration
-// export function initConfig(configService: ConfigHelperService) {
-//   return () => configService.load(environment, 'assets/config.json');
-// }
-
+import { AdminPlatComponent } from './components/administration/plats/admin-plat/admin-plat.component';
+import { AdminCategorieComponent } from './components/administration/categories/admin-categorie/admin-categorie.component';
+import { ShowPlatComponent } from './components/administration/plats/show-plat/show-plat.component';
+import { ShowImageComponent } from './components/administration/show-image/show-image.component';
+import { AppConfiguration } from './services/configuration-helper';
+// import { GoogleMapsModule } from '@angular/google-maps';
+// import { LocalizeComponent } from './components/gui/localize/localize.component'
 
 export function AppConfigurationFactory(
   appConfig: AppConfiguration) {
-  return () => appConfig.ensureInit()
-    .then((data) =>
-      console.log(data)
-    )
-    .catch();
+  return () => appConfig.ensureInit();
 }
 
 
@@ -84,6 +79,11 @@ export function AppConfigurationFactory(
     LeMenuPizzaComponent,
     LeMenuEnfantComponent,
     LesDessertsEtFromagesComponent,
+    AdminPlatComponent,
+    AdminCategorieComponent,
+    ShowPlatComponent,
+    ShowImageComponent,
+    // LocalizeComponent,
 
 
 
@@ -97,16 +97,20 @@ export function AppConfigurationFactory(
     ReactiveFormsModule,
     FormsModule,
     EditorModule,
+    // GoogleMapsModule
 
 
   ],
   providers: [
-    AppConfiguration,
-
-    // { provide: APP_INITIALIZER, useFactory: AppConfigurationFactory, deps: [AppConfiguration, HttpClient], multi: true },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: AppConfigurationFactory,
+      deps: [AppConfiguration, HttpClient], multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })
+
 
 
 export class AppModule { }
