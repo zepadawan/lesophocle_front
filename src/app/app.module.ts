@@ -42,6 +42,7 @@ import { ShowImageComponent } from './components/administration/show-image/show-
 import { AppConfiguration } from './services/configuration-helper';
 // import { GoogleMapsModule } from '@angular/google-maps';
 // import { LocalizeComponent } from './components/gui/localize/localize.component'
+// import { AgmCoreModule } from '@agm/core';
 
 export function AppConfigurationFactory(
   appConfig: AppConfiguration) {
@@ -97,7 +98,9 @@ export function AppConfigurationFactory(
     ReactiveFormsModule,
     FormsModule,
     EditorModule,
-    // GoogleMapsModule
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyAwDVE7iXt9NJ4weBhknF9pbn09O5TGSaw',
+    // }
 
 
   ],
