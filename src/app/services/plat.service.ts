@@ -36,14 +36,12 @@ export class PlatService {
         this.emitPlats();
       },
       (error) => {
-        // console.log(error);
       }
     )
   }
 
   getPlatById(id: number) {
     const url = `${environment.api + 'plats/' + id}`;
-    console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url).subscribe(
         (data: Result) => {
@@ -71,12 +69,10 @@ export class PlatService {
           if (data.status == 201) {
             resolve(data.args);
           } else {
-            console.log(data.message);
             reject(data.message);
           }
         },
         (err) => {
-          console.log(err);
           reject(err);
         }
       )
@@ -111,7 +107,6 @@ export class PlatService {
         },
         (err) => {
           reject(err);
-          console.log(err.message);
         }
       )
     })
@@ -120,18 +115,13 @@ export class PlatService {
   saveImageOnServer(file: File, categName: string) {
     const urlImage = `${environment.api_image}`;
     const url = `${environment.api + 'upload/'}`;
-    console.log('url = ' + url);
-    console.log(file);
     let formdata: any = new FormData();
     formdata.append("sampleFile", file);
     formdata.append("pathImage", categName);
     this.http.post(url, formdata).subscribe(
       (data: Result) => {
-        console.log(data);
       },
       (err) => {
-        console.log('erreur ----');
-        console.log(err);
       });
   }
 
@@ -140,11 +130,9 @@ export class PlatService {
     var aresult = "";
     this.categorieService.getCategorieNameById(id_categorie)
       .then((data: Categorie) => {
-        console.log(data);
         aresult = data.libelle;
       })
       .catch((err) => {
-        console.log(err);
       });
     return aresult;
   };

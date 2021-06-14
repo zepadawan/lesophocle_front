@@ -94,8 +94,6 @@ export class AddPlatComponent implements OnInit {
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
     newPlat.ordre = this.platForm.get('ordre').value;
 
-    console.log('newPlat', newPlat);
-
     if (this.platForm.get('sampleFile').value) {
       newPlat.nom_image = (this.platForm.get('sampleFile').value).name;
     }
@@ -103,7 +101,6 @@ export class AddPlatComponent implements OnInit {
     if (this.platForm.get('sampleFile').value) {
       this.categorieService.getCategorieNameById(newPlat.id_categorie)
         .then((data: Categorie) => {
-          console.log('data', data);
           this.categName = data.pathImage;
           this.platService.saveImageOnServer(this.platForm.get('sampleFile').value, this.categName);
         })
@@ -112,7 +109,6 @@ export class AddPlatComponent implements OnInit {
     }
     this.platService.createNewPlat(newPlat)
       .then((data) => {
-        console.log('New Plat OK');
         this.successMessage = 'le nouveau plat : ' + newPlat.libelle + '  est enregistré';
         setTimeout(
           () => {

@@ -46,12 +46,12 @@ export class UserService {
               this.userId = this.user.id;
               this.token = data.token
               resolve(data.result);
+
             } else {
               reject(data.message);
             }
           },
           (error) => {
-            console.log(error);
             reject(error);
           }
         )
@@ -73,9 +73,7 @@ export class UserService {
         };
         this.http.post(url, body).subscribe(
           (data: Result) => {
-            console.log(data);
             if (data.status == 200) {
-              console.log(data);
               this.user = data.args;
               this.isAuth = true;
               this.emitUsers();
@@ -104,5 +102,6 @@ export class UserService {
     this.user = null;
     this.isAuth = false;
     this.userSubject = new Subject<User>();
+
   }
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Categorie } from 'src/app/models/categorie-modele';
@@ -8,6 +9,7 @@ import { Result } from 'src/app/models/result-modele';
 import { CategorieService } from 'src/app/services/categorie.service';
 import { PlatService } from 'src/app/services/plat.service';
 import { environment } from 'src/environments/environment';
+import { MessagesComponent } from '../../messages/messages.component';
 
 @Component({
   selector: 'node-edit-plat',
@@ -40,12 +42,12 @@ export class EditPlatComponent implements OnInit, OnDestroy {
     private categorieService: CategorieService,
     private fb: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
     this.categories = this.categorieService.categories;
-    console.log(this.categories);
     this.initFormBuilder();
     this.platSubscription = this.route.params.subscribe(
       (params: Params) => {
@@ -59,6 +61,7 @@ export class EditPlatComponent implements OnInit, OnDestroy {
                 categorie: [this.plat.id_categorie, [Validators.required]],
                 prix: [this.plat.prix, [Validators.required]],
                 ordre: [this.plat.ordre,],
+                allergenes: [this.plat.allergenes,],
                 poids_dimension: [this.plat.poids_dimension,],
                 description: [this.plat.description,],
                 htmlText: ['',],
@@ -67,14 +70,10 @@ export class EditPlatComponent implements OnInit, OnDestroy {
                 actif: [this.plat.actif,],
               });
               this.currentCategorie = this.plat.id_categorie;
-              console.log('this.plat.id_categorie', this.plat.id_categorie);
               this.categorieService.getCategorieNameById(this.plat.id_categorie)
                 .then((data: Categorie) => {
-                  console.log('data', data);
                   this.categName = data.pathImage;
-                  console.log('categName', this.categName);
                   this.pathPreview = `${environment.api_image}` + this.categName + '/' + this.plat.nom_image;
-                  console.log('pathPreview :', this.pathPreview);
                   this.imagePreview = this.pathPreview;
                 })
                 .catch();
@@ -98,6 +97,7 @@ export class EditPlatComponent implements OnInit, OnDestroy {
       prix: ['', [Validators.required]],
       ordre: ['',],
       poids_dimension: ['',],
+      allergenes: ['',],
       description: ['',],
       htmlText: ['',],
       sous_titre: ['',],
@@ -124,11 +124,17 @@ export class EditPlatComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+
+    this.dialog.open(MessagesComponent, { data: { message: "Error  !" } });
+    setTimeout(() => {
+
+    }, 4000);
     const newPlat = new Plat();
     const idPlat = this.plat.id;
     newPlat.libelle = this.platForm.get('libelle').value;
     newPlat.id_categorie = this.platForm.get('categorie').value;
     newPlat.prix = this.platForm.get('prix').value;
+    newPlat.allergenes = this.platForm.get('allergenes').value;
     newPlat.poids_dimension = this.platForm.get('poids_dimension').value;
     newPlat.description = this.platForm.get('description').value;
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
@@ -162,7 +168,6 @@ export class EditPlatComponent implements OnInit, OnDestroy {
   onDelete() {
     this.platService.deletePlat(this.plat.id)
       .then(() => {
-        console.log('Plat supprimé !');
         this.router.navigate(['/admin-plat/' + this.currentCategorie]);
       })
       .catch();

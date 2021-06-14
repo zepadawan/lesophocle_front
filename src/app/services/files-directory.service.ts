@@ -30,7 +30,6 @@ export class FilesDirectoryService {
           resolve(data);
         },
         (err) => {
-          console.log(err);
           reject(err);
         }
       )

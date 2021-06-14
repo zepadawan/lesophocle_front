@@ -9,7 +9,7 @@
         <tr class="m-0">
           <th class="w-90">{{platType}}</th>
           <th class="w-10">Prix</th>
-          <th class="w-10">Détail / Image</th>
+          <th class="w-10">Image</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +19,8 @@
             <ul>
               <li class="plat-description">{{ plat.description}}</li>
               <li class="plat-description">{{ plat.sous_titre}}</li>
+              <li class="plat-description" *ngIf="plat.allergenes">Allergenes : ({{plat.allergenes}})</li>
+
               <li class="plat-description">{{ plat.poids_dimension}}</li>
             </ul>
           </td>
@@ -27,19 +29,48 @@
           </td>
           <td class="m-10" *ngIf="plat.actif && plat.nom_image" [routerLink]="['/show-plat',plat.id]"
             style="cursor: pointer;">
-            <button *ngIf=" plat.nom_image" class="pro-btn" title="Afficher l'image"><i class="ion-images"></i></button>
+            <!-- <button *ngIf=" plat.nom_image" class="pro-btn" title="Afficher l'image"><i class="ion-images"></i></button> -->
+            <div>
+              <!-- <img [src]="urlImage + pathImage + 'plat.nom_image' " alt=""> -->
+              <!-- <img [src]=" 'https://lesophocle.com:8082/public/images/pizzas/' + plat.nom_image" alt=""
+                style="width: 50px; height: 50px;"> -->
+              <a [routerLink]="['/show-image', plat.id]">
+                <img [src]=" urlImage + pathImage+ '/' + plat.nom_image" alt="" style="width: 50px; height: 50px;">
+              </a>
+
+            </div>
           </td>
         </tr>
       </tbody>
-    </table>
-    <div class="text-center">
-      <div class="col-md-6 offset-md-3">
-        <div class="sign-btn">
-          <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/accueil']"
-            routerLinkActive="router-link-active">
-            Retour à l'accueil</button>
+      <div *ngIf="platType == 'Les Pizzas'">
+        <div class="text-center pied-1">
+          Toute Modification ou rajout d'ingrédients, supplément de 1,00€
+        </div>
+        <div class="text-center pied-2">
+          Toutes nos Pizzas sont fabriquées et préparées par notre Pizzaiolo
+        </div>
+        <div class="text-center pied-3">
+          FROMAGE MOZZARELLA : FIOR DI LATTE , D'ITALIE
         </div>
       </div>
-    </div>
+      <div *ngIf="platType == 'Les Viandes'">
+        <div class="text-center pied-1">
+          Tout changement d'accompagnement, supplément de 1,50€
+        </div>
+        <div class="text-center pied-2">
+          Accompagnées de Frites et Salades
+        </div>
+      </div>
+
+
+      <div class="text-center pied-4 ">
+        - SERVICE COMPRIS -
+      </div>
+      <div class="sign-btn text-center">
+        <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/accueil']" routerLinkActive="router-link-active">
+          Retour à l'accueil</button>
+      </div>
+
+    </table>
 
   </div>

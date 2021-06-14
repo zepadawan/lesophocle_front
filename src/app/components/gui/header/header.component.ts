@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cart } from 'src/app/models/cart-modele';
 import { Carte } from 'src/app/models/carte.model';
@@ -38,17 +39,21 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService,
     private userService: UserService,
     private categorieService: CategorieService,
+    private route: Router,
     private carteService: CarteService) { }
 
   ngOnInit(): void {
-
     this.carts = this.cartService.carts;
     this.categories = this.categorieService.categories;
     this.cartes = this.carteService.cartes;
+
+
     this.isAuth = this.userService.isAuth;
     this.user = this.userService.user;
     this.isAdmin = this.userService.isAdmin;
     this.isSuperAdmin = this.userService.isSuperAdmin;
+
+
   }
 
   ngOnDestroy(): void {
@@ -60,5 +65,6 @@ export class HeaderComponent implements OnInit {
   onLogOut() {
     this.userService.logOut();
     this.isAuth = this.userService.isAuth;
+    this.route.navigate(['/accueil']);
   }
 }

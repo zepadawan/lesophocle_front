@@ -36,7 +36,6 @@ export class ShowImageComponent implements OnInit {
               .then((data: Categorie) => {
                 this.categName = data.pathImage;
                 this.image = `${environment.api_image}` + this.categName + '/' + this.plat.nom_image;
-                console.log(this.image);
 
               })
               .catch();

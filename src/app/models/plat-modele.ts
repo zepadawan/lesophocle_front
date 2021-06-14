@@ -4,6 +4,7 @@ export class Plat {
   id_categorie?: number;
   prix?: string;
   ordre?: number;
+  allergenes?: string;
   poids_dimension?: string;
   description?: string;
   sous_titre?: string;

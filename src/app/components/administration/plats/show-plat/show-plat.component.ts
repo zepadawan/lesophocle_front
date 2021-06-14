@@ -33,7 +33,6 @@ export class ShowPlatComponent implements OnInit, OnDestroy {
         this.platService.getPlatById(params.id)
           .then(
             (data: Result) => {
-              console.log(data);
               const tab = data.args;
               this.plat = data.args;
               this.categorieService.getCategorieNameById(tab.id_categorie)

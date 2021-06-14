@@ -21,6 +21,14 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HeaderAdminComponent } from './components/gui/header-admin/header-admin.component';
 
+
+// Material
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+
 // Google
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
@@ -40,7 +48,9 @@ import { AdminCategorieComponent } from './components/administration/categories/
 import { ShowPlatComponent } from './components/administration/plats/show-plat/show-plat.component';
 import { ShowImageComponent } from './components/administration/show-image/show-image.component';
 import { AppConfiguration } from './services/configuration-helper';
-// import { GoogleMapsModule } from '@angular/google-maps';
+import { MessagesComponent } from './components/administration/messages/messages.component';
+import { CarouselComponent } from './components/administration/carousel/carousel.component';
+
 // import { LocalizeComponent } from './components/gui/localize/localize.component'
 // import { AgmCoreModule } from '@agm/core';
 
@@ -84,9 +94,8 @@ export function AppConfigurationFactory(
     AdminCategorieComponent,
     ShowPlatComponent,
     ShowImageComponent,
-    // LocalizeComponent,
-
-
+    MessagesComponent,
+    CarouselComponent
 
   ],
   imports: [
@@ -98,11 +107,15 @@ export function AppConfigurationFactory(
     ReactiveFormsModule,
     FormsModule,
     EditorModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyAwDVE7iXt9NJ4weBhknF9pbn09O5TGSaw',
-    // }
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDialogModule
 
-
+  ],
+  entryComponents: [
+    MessagesComponent,
   ],
   providers: [
     {

@@ -48,7 +48,6 @@ export class NousEcrireComponent implements OnInit {
 
     this.emailServices.sendMessage(newEemail)
       .then(() => {
-        console.log('mail send OK !');
         this.successMessage = 'Mail envoyé!';
         setTimeout(
           () => {

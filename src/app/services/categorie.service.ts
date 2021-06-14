@@ -43,7 +43,6 @@ export class CategorieService {
 
   getCategorieNameById(id: number) {
     const url = `${environment.api + 'categories/' + id}`;
-    console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url).subscribe(
         (data: Result) => {
@@ -55,7 +54,7 @@ export class CategorieService {
           }
         },
         (err) => {
-          console.log(err);
+
         }
       )
     })

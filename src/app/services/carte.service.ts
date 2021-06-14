@@ -41,7 +41,6 @@ export class CarteService {
 
   getCarteNameById(id: number) {
     const url = `${environment.api + 'cartes/' + id}`;
-    console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url).subscribe(
         (data: Result) => {
@@ -53,8 +52,6 @@ export class CarteService {
           }
         },
         (err) => {
-          console.log(err);
-
         }
       )
     })

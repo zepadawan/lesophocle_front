@@ -20,7 +20,7 @@ import { AdminPlatComponent } from './components/administration/plats/admin-plat
 import { AdminCategorieComponent } from './components/administration/categories/admin-categorie/admin-categorie.component';
 import { ShowPlatComponent } from './components/administration/plats/show-plat/show-plat.component';
 import { ShowImageComponent } from './components/administration/show-image/show-image.component';
-// import { LocalizeComponent } from './components/gui/localize/localize.component';
+import { CarouselComponent } from './components/administration/carousel/carousel.component';
 
 const routes: Routes = [
 
@@ -31,7 +31,8 @@ const routes: Routes = [
   { path: 'lesSoirees', component: LesSoireesComponent },
   { path: 'lesPrivees', component: LesSoireesPriveesComponent },
   { path: 'nousEcrire', component: NousEcrireComponent, canActivate: [AuthGuard] },
-  // { path: 'localize', component: LocalizeComponent, canActivate: [AuthGuard] },
+  { path: 'carousel', component: CarouselComponent },
+
   { path: 'connexion', component: LoginComponent },
   { path: 'administration', component: AdministrationComponent, canActivate: [AuthGuard] },
 

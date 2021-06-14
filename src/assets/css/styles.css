@@ -2058,12 +2058,8 @@ top-nav-style1 start
     background: #ffffff;
     opacity: 0;
     visibility: hidden;
-    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
-    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transform: rotateX(-75deg);
-    transform: rotateX(-75deg);
 }
 
 .main-menu li:hover>.sub-menu {
@@ -2073,7 +2069,6 @@ top-nav-style1 start
     transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, opacity 0.3s;
     transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-    -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
 }
 
@@ -2107,11 +2102,8 @@ top-nav-style1 start
     visibility: hidden;
     left: 100%;
     top: 0;
-    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
-    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transform: rotateX(-75deg);
     transform: rotateX(-75deg);
 }
 
@@ -3493,15 +3485,12 @@ breadcrumb-section END
  ***********************************************************************************************/
 
 .tab-content .tab-pane.active .product-list {
-    -webkit-animation: zoomIn 0.5s ease;
     animation: zoomIn 0.5s ease;
-    -webkit-animation-duration: 1s;
     animation-duration: 1s;
 }
 
 .product-thumbnail img {
     transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
 }
 
 img.second-img {
@@ -3510,7 +3499,6 @@ img.second-img {
     left: 0;
     opacity: 0;
     transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
 }
 
 .product-card {
@@ -4602,7 +4590,7 @@ img.second-img {
     border: 1px solid #ebebeb;
     display: block;
     text-align: center;
-    -moz-appearance: textfield;
+
 }
 
 .product-count.style .count-btn {

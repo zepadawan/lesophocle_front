@@ -7,6 +7,7 @@ import { User } from 'src/app/models/user-modele';
 import { CategorieService } from 'src/app/services/categorie.service';
 import { PlatService } from 'src/app/services/plat.service';
 import { UserService } from 'src/app/services/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'node-la-carte',
@@ -19,8 +20,10 @@ export class LaCarteComponent implements OnInit {
   platSubscription: Subscription;
 
   platType: string;
+  pathImage: string;
   user: User;
   isAdmin = true;
+  urlImage = environment.api_image;
   // isAdmin = false;
 
   constructor(private platService: PlatService,
@@ -42,6 +45,7 @@ export class LaCarteComponent implements OnInit {
             this.categorieService.getCategorieNameById(+request.id)
               .then((data: Categorie) => {
                 this.platType = data.libelle;
+                this.pathImage = data.pathImage;
               })
               .catch();
           }
