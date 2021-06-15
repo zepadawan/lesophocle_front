@@ -38,3 +38,8 @@
   height: 1em;
   margin-left: 20px;
 }
+
+.backdropBackground {
+  /* your css needs */
+  background-color: ivory;
+}

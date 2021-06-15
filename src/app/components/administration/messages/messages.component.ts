@@ -40,7 +40,7 @@ export class MessagesComponent implements OnInit {
     )
 
   }
-  public closeMe() {
+  public close() {
     this.dialogRef.close();
 
   }

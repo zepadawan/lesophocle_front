@@ -50,7 +50,8 @@ import { ShowImageComponent } from './components/administration/show-image/show-
 import { AppConfiguration } from './services/configuration-helper';
 import { MessagesComponent } from './components/administration/messages/messages.component';
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
-
+import { ModalComponent } from './components/administration/modal/modal.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 // import { LocalizeComponent } from './components/gui/localize/localize.component'
 // import { AgmCoreModule } from '@agm/core';
 
@@ -95,7 +96,8 @@ export function AppConfigurationFactory(
     ShowPlatComponent,
     ShowImageComponent,
     MessagesComponent,
-    CarouselComponent
+    CarouselComponent,
+    ModalComponent
 
   ],
   imports: [
@@ -111,11 +113,14 @@ export function AppConfigurationFactory(
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCarouselModule.forRoot(),
+
 
   ],
   entryComponents: [
     MessagesComponent,
+    ModalComponent
   ],
   providers: [
     {

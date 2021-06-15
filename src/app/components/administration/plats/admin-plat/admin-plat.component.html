@@ -8,22 +8,22 @@
       <thead>
         <tr>
           <th scope="col">Ordre</th>
-          <th scope="col" style="width: 60%;">{{platType}}</th>
+          <th scope="col" style="width: 70%;">{{platType}}</th>
+          <th scope="col">Allergènes</th>
           <th scope="col">Prix</th>
           <th scope="col" *ngIf="isAdmin">Administration</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let plat of plats; let index = index">
-          <th scope="row" *ngIf="isAdmin">{{plat.ordre}}</th>
-          <th scope="row" *ngIf="!isAdmin"> - </th>
-          <td style="width: 500px; height: auto;">
+          <th scope="row">{{plat.ordre}}</th>
+          <td style="width: 600px; height: auto;">
             <p>{{ plat.libelle}}</p>
             <p class="plat-description">{{ plat.description}} </p>
             <p class="plat-description">{{ plat.sous_titre}}</p>
             <p class="plat-description">{{ plat.poids_dimension}}</p>
-
           </td>
+          <td>( {{ plat.allergenes}} )</td>
           <td>{{ plat.prix}} €</td>
           <td>
             <button *ngIf="plat.nom_image" class="pro-btn" title="Afficher l'image"

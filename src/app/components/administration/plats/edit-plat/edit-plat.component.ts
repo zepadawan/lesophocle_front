@@ -125,10 +125,6 @@ export class EditPlatComponent implements OnInit, OnDestroy {
 
   onSubmit() {
 
-    this.dialog.open(MessagesComponent, { data: { message: "Error  !" } });
-    setTimeout(() => {
-
-    }, 4000);
     const newPlat = new Plat();
     const idPlat = this.plat.id;
     newPlat.libelle = this.platForm.get('libelle').value;

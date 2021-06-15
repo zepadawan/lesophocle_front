@@ -29,10 +29,10 @@ export class HeaderComponent implements OnInit {
   refApiImages = environment.api_image;
 
 
-  @Input() isAuth = false;
+  @Input() isAuth;
   @Input() user: User;
-  @Input() isAdmin = false;
-  @Input() isSuperAdmin = true;
+  @Input() isAdmin;
+  @Input() isSuperAdmin;
 
 
 
@@ -65,6 +65,8 @@ export class HeaderComponent implements OnInit {
   onLogOut() {
     this.userService.logOut();
     this.isAuth = this.userService.isAuth;
+    this.isAdmin = this.userService.isAdmin;
+    this.isSuperAdmin = this.userService.isSuperAdmin;
     this.route.navigate(['/accueil']);
   }
 }

@@ -1,0 +1,12 @@
+<div>
+  <h1 mat-dialog-title>Liste des Allergenes</h1>
+  <div mat-dialog-content style=" color: lawngreen;">
+    <div *ngFor="let allerg of allergenes">
+      <p>{{allerg.numero}} - {{allerg.libelle}} </p>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Ok</button>
+    <!-- <button mat-button [mat-dialog-close]="data.email" cdkFocusInitial>Yes</button> -->
+  </div>
+</div>

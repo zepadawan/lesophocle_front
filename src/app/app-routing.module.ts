@@ -28,23 +28,23 @@ const routes: Routes = [
   { path: 'laCarte/:id', component: LaCarteComponent },
   { path: 'lesBoissons', component: LesBoissonsComponent },
   { path: 'lesDesserts', component: LesDessertsComponent },
-  { path: 'lesSoirees', component: LesSoireesComponent },
-  { path: 'lesPrivees', component: LesSoireesPriveesComponent },
-  { path: 'nousEcrire', component: NousEcrireComponent, canActivate: [AuthGuard] },
+  { path: 'concerts', component: LesSoireesComponent },
+  { path: 'soirees', component: LesSoireesPriveesComponent },
+  { path: 'nousEcrire', component: NousEcrireComponent, },
   { path: 'carousel', component: CarouselComponent },
 
   { path: 'connexion', component: LoginComponent },
-  { path: 'administration', component: AdministrationComponent, canActivate: [AuthGuard] },
+  { path: 'administration', component: AdministrationComponent, },
 
   { path: 'admin-plat/:id', component: AdminPlatComponent, },
   { path: 'add-plat', component: AddPlatComponent, },
-  { path: 'edit-plat/:id', component: EditPlatComponent, canActivate: [AuthGuard] },
+  { path: 'edit-plat/:id', component: EditPlatComponent, },
   { path: 'show-plat/:id', component: ShowPlatComponent, },
-  { path: 'show-image/:id', component: ShowImageComponent, canActivate: [AuthGuard] },
+  { path: 'show-image/:id', component: ShowImageComponent, },
 
   { path: 'admin-categorie', component: AdminCategorieComponent, },
-  { path: 'add-categorie', component: AddCategorieComponent, canActivate: [AuthGuard] },
-  { path: 'edit-categorie/:id', component: EditCategorieComponent, canActivate: [AuthGuard] },
+  { path: 'add-categorie', component: AddCategorieComponent, },
+  { path: 'edit-categorie/:id', component: EditCategorieComponent, },
 
   { path: 'notFound', component: NotFoundComponent },
 

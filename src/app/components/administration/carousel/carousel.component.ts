@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { MatCarousel, MatCarouselComponent, MatCarouselSlide, MatCarouselSlideComponent } from '@ngmodule/material-carousel';
 
 @Component({
   selector: 'node-carousel',
@@ -7,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  slides: string[];
+  @Input() images: string[];
+  @Input() folder: string;
+  apathImage: string;
+  // apathImage = `${environment.api_image}` + 'concerts/';
   constructor() { }
 
   ngOnInit(): void {
-    this.slides = [
-      "https://source.unsplash.com/1600x900/?nature,water",
-      "https://source.unsplash.com/1600x1600/?nature,forest"
-    ]
+    this.apathImage = `${environment.api_image}` + this.folder + '/';
+
   }
 }
 

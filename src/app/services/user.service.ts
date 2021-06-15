@@ -11,9 +11,9 @@ import { User } from '../models/user-modele';
 export class UserService {
 
   user: User;
-  isAuth = false;
-  isAdmin = true;
-  isSuperAdmin = false;
+  isAuth: boolean = false;
+  isAdmin: boolean = false;
+  isSuperAdmin: boolean = false;
 
   userSubject = new Subject<User>();
   userId: number;
@@ -101,7 +101,8 @@ export class UserService {
   logOut(): void {
     this.user = null;
     this.isAuth = false;
+    this.isAdmin = false;
+    this.isSuperAdmin = false;
     this.userSubject = new Subject<User>();
-
   }
 }
