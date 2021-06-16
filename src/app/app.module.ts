@@ -30,6 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 
 // Google
+
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
 
@@ -47,23 +48,21 @@ import { AdminPlatComponent } from './components/administration/plats/admin-plat
 import { AdminCategorieComponent } from './components/administration/categories/admin-categorie/admin-categorie.component';
 import { ShowPlatComponent } from './components/administration/plats/show-plat/show-plat.component';
 import { ShowImageComponent } from './components/administration/show-image/show-image.component';
-import { AppConfiguration } from './services/configuration-helper';
 import { MessagesComponent } from './components/administration/messages/messages.component';
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
 import { ModalComponent } from './components/administration/modal/modal.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LocalizeComponent } from './components/gui/localize/localize.component';
+import { ConfigComponent } from './components/administration/config/config.component';
+import { ConfigService } from '../app/services/config.service';
 
-// import { LocalizeComponent } from './components/gui/localize/localize.component'
-// import { AgmCoreModule } from '@agm/core';
 
-export function AppConfigurationFactory(
-  appConfig: AppConfiguration) {
-  return () => appConfig.ensureInit();
+import { environment } from '../environments/environment';
+export function ConfigLoader(configService: ConfigService) {
+  //Note: this factory need to return a function (that return a promise)
+  return () => configService.onLoad(environment.configFile);
 }
-
-
 
 @NgModule({
   declarations: [
@@ -102,6 +101,7 @@ export function AppConfigurationFactory(
     CarouselComponent,
     ModalComponent,
     LocalizeComponent,
+    ConfigComponent,
 
   ],
   imports: [
@@ -128,9 +128,11 @@ export function AppConfigurationFactory(
   providers: [
     {
       provide: APP_INITIALIZER,
-      useFactory: AppConfigurationFactory,
-      deps: [AppConfiguration, HttpClient], multi: true
-    },
+      useFactory: ConfigLoader,
+      deps: [ConfigService],
+      multi: true
+    }
+
   ],
   bootstrap: [AppComponent]
 })

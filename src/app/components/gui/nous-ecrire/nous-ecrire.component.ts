@@ -2,11 +2,9 @@ import { CompilerFacadeImpl } from '@angular/compiler/src/jit_compiler_facade';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { nextTick } from 'process';
-import { timeout } from 'rxjs/operators';
 import { Email } from 'src/app/models/email.model';
+import { ConfigService } from 'src/app/services/config.service';
 import { EmailService } from 'src/app/services/email.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'node-nous-ecrire',
@@ -16,15 +14,20 @@ import { UserService } from 'src/app/services/user.service';
 export class NousEcrireComponent implements OnInit {
 
   emailForm: FormGroup;
-  errorMessage;
-  successMessage;
+  errorMessage: string;
+  successMessage: string;
+  emailTo: string;
 
   constructor(private formBuilder: FormBuilder,
     private emailServices: EmailService,
+    private configService: ConfigService,
     private router: Router) { }
 
   ngOnInit(): void {
     this.initRegisterForm();
+    this.emailTo = this.configService.getConfiguration().emailTo;
+
+
   }
 
   initRegisterForm(): void {
@@ -45,7 +48,7 @@ export class NousEcrireComponent implements OnInit {
     newEemail.email = this.emailForm.get('email').value;
     newEemail.subject = this.emailForm.get('subject').value;
     newEemail.message = this.emailForm.get('message').value;
-
+    newEemail.emailTo = this.emailTo;
     this.emailServices.sendMessage(newEemail)
       .then(() => {
         this.successMessage = 'Mail envoyé!';
