@@ -21,6 +21,7 @@ import { AdminCategorieComponent } from './components/administration/categories/
 import { ShowPlatComponent } from './components/administration/plats/show-plat/show-plat.component';
 import { ShowImageComponent } from './components/administration/show-image/show-image.component';
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
+import { LocalizeComponent } from './components/gui/localize/localize.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,8 @@ const routes: Routes = [
   { path: 'concerts', component: LesSoireesComponent },
   { path: 'soirees', component: LesSoireesPriveesComponent },
   { path: 'nousEcrire', component: NousEcrireComponent, },
+  { path: 'localize', component: LocalizeComponent, },
+
   { path: 'carousel', component: CarouselComponent },
 
   { path: 'connexion', component: LoginComponent },

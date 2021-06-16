@@ -52,6 +52,9 @@ import { MessagesComponent } from './components/administration/messages/messages
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
 import { ModalComponent } from './components/administration/modal/modal.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { LocalizeComponent } from './components/gui/localize/localize.component';
+
 // import { LocalizeComponent } from './components/gui/localize/localize.component'
 // import { AgmCoreModule } from '@agm/core';
 
@@ -97,7 +100,8 @@ export function AppConfigurationFactory(
     ShowImageComponent,
     MessagesComponent,
     CarouselComponent,
-    ModalComponent
+    ModalComponent,
+    LocalizeComponent,
 
   ],
   imports: [
@@ -115,8 +119,7 @@ export function AppConfigurationFactory(
     MatFormFieldModule,
     MatDialogModule,
     MatCarouselModule.forRoot(),
-
-
+    GoogleMapsModule
   ],
   entryComponents: [
     MessagesComponent,

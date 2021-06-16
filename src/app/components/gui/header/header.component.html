@@ -80,31 +80,6 @@
       id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto main-menu d-flex text-dark">
         <li routerLinkActive="active"><a routerLink="/accueil">Accueil</a></li>
-        <li routerLinkActive="active"><a routerLink="/notFound">Menu du jour</a></li>
-        <li routerLinkActive="active"><a routerLink="/notFound">La Carte</a>
-          <ul class="sub-menu">
-            <li *ngFor="let cat of categories">
-              <a [routerLink]="['/laCarte', cat.id]">{{cat.libelle}}</a>
-            </li>
-          </ul>
-        </li>
-        <li routerLinkActive="active"><a routerLink="/notFound">Les Formules et Menus</a>
-          <ul class="sub-menu" style="width :100px">
-            <li *ngFor="let carte of cartes">
-              <a [routerLink]="['/carte.libelle', carte.id]">{{carte.libelle}}</a>
-            </li>
-          </ul>
-
-        </li>
-        <li routerLinkActive="active"><a routerLink="/notFound">Les Boissons</a></li>
-        <li routerLinkActive="active"><a routerLink="/concerts">Les soirées</a></li>
-        <li routerLinkActive="active"><a routerLink="/soirees">privatisation</a></li>
-        <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/carousel">carousel</a></li>
-        <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">click & collect</a></li>
-        <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/nousEcrire">Nous écrire</a></li>
-        <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/localize">Nous trouver</a></li>
-        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/connexion">Connexion</a></li>
-        <li (click)="onLogOut()" *ngIf="isAuth"><a class="btn">Déconnecter</a></li>
         <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/administration">Administration</a>
           <ul class="sub-menu" style="width :auto">
             <li>
@@ -140,6 +115,32 @@
 
           </ul>
         </li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Menu du jour</a></li>
+        <li routerLinkActive="active"><a routerLink="/notFound">La Carte</a>
+          <ul class="sub-menu">
+            <li *ngFor="let cat of categories">
+              <a [routerLink]="['/laCarte', cat.id]">{{cat.libelle}}</a>
+            </li>
+          </ul>
+        </li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Les Formules et Menus</a>
+          <ul class="sub-menu" style="width :100px">
+            <li *ngFor="let carte of cartes">
+              <a [routerLink]="['/carte.libelle', carte.id]">{{carte.libelle}}</a>
+            </li>
+          </ul>
+
+        </li>
+        <li routerLinkActive="active"><a routerLink="/notFound">Les Boissons</a></li>
+        <li routerLinkActive="active"><a routerLink="/concerts">Les soirées</a></li>
+        <li routerLinkActive="active"><a routerLink="/soirees">privatisation</a></li>
+        <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/carousel">carousel</a></li>
+        <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">click & collect</a></li>
+        <li routerLinkActive="active"><a routerLink="/nousEcrire">Nous écrire</a></li>
+        <li routerLinkActive="active"><a routerLink="/localize">Nous trouver</a></li>
+        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/connexion">Connexion</a></li>
+        <li (click)="onLogOut()" *ngIf="isAuth"><a class="btn">Déconnecter</a></li>
+
 
       </ul>
     </div>

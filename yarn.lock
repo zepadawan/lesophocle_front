@@ -249,13 +249,13 @@
   dependencies:
     tslib "^2.1.0"
 
-"@angular/google-maps@^12.0.4":
-  version "12.0.4"
-  resolved "https://registry.npmjs.org/@angular/google-maps/-/google-maps-12.0.4.tgz"
-  integrity sha512-Afkjd6t+X4OVTEZ2kEmK++iLmIr5DdKJ0aovcKR2wLWXZseTJrIq0YjvK/86RGi1Z9m7odVwJxpGD13Ugk263A==
+"@angular/google-maps@^12.1.0-next.0":
+  version "12.1.0-next.0"
+  resolved "https://registry.npmjs.org/@angular/google-maps/-/google-maps-12.1.0-next.0.tgz"
+  integrity sha512-FT7M67yhV+boVw2yU6gTz7HPPiZVRvv7o89zYKIsDEtjfnxfsBjHIGPQBrvQylhZ3VotHfpt3M8O2otG870MIw==
   dependencies:
     "@types/googlemaps" "^3.43.1"
-    tslib "^2.1.0"
+    tslib "^2.2.0"
 
 "@angular/material@^12.0.4":
   version "12.0.4"
@@ -1179,7 +1179,7 @@
 
 "@ngmodule/material-carousel@^0.6.0":
   version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@ngmodule/material-carousel/-/material-carousel-0.6.0.tgz#096dc3b4f45414b462f476f0de3632487435ceb4"
+  resolved "https://registry.npmjs.org/@ngmodule/material-carousel/-/material-carousel-0.6.0.tgz"
   integrity sha512-k3Os2TfbX69oa3AvG46sQflwuR836mUPpfRFcbMHkxEXw1uc9pAo2mEbmA9Srv9R9Mj0eJLeu0chNR7fuyzodQ==
   dependencies:
     tslib "^1.9.0"
@@ -9709,7 +9709,7 @@ tslib@^1.10.0, tslib@^1.13.0, tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.1.0:
+tslib@^2.0.0, tslib@^2.1.0, tslib@^2.2.0:
   version "2.3.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
