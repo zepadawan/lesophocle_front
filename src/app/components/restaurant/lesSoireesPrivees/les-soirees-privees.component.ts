@@ -9,22 +9,12 @@ import { environment } from 'src/environments/environment';
   templateUrl: './les-soirees-privees.component.html',
   styleUrls: ['./les-soirees-privees.component.css']
 })
-export class LesSoireesPriveesComponent implements OnInit {
+// soirees_privees
+export class LesSoireesPriveesComponent {
 
-
-  files: string[] = [];
-  filesSubscription: Subscription;
   folder: string;
-  apathImage = environment.api_image + 'concerts/'
 
-  constructor(private filesDirectoryService: FilesDirectoryService) { }
-
-  ngOnInit(): void {
-    this.folder = 'soirees_privees'
-    this.filesDirectoryService.getFiles(this.folder)
-      .then((data: Result) => {
-        this.files = data.args
-      })
-      .catch();
+  constructor() {
+    this.folder = 'soirees_privees';
   }
 }

@@ -10,23 +10,11 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./les-soirees.component.css']
 })
 
-export class LesSoireesComponent implements OnInit {
+export class LesSoireesComponent {
 
-  files: string[] = [];
-  filesSubscription: Subscription;
   folder: string;
-  apathImage = environment.api_image + 'concerts/'
-
-  constructor(private filesDirectoryService: FilesDirectoryService) { }
-
-  ngOnInit(): void {
-    this.folder = 'concerts'
-    this.filesDirectoryService.getFiles(this.folder)
-      .then((data: Result) => {
-        this.files = data.args
-      })
-      .catch();
+  constructor() {
+    this.folder = 'concerts';
   }
-
 
 }

@@ -30,14 +30,19 @@ export class PlatService {
 
   getPlatsFromServer(): any {
     const url = `${environment.api + 'plats'}`;
-    return this.http.get<any>(url).subscribe(
-      (data: Result) => {
-        this.plats = data.args;
-        this.emitPlats();
-      },
-      (error) => {
-      }
-    )
+    return new Promise((resolve, reject) => {
+      this.http.get<any>(url).subscribe(
+        (data: Result) => {
+          this.plats = data.args;
+          resolve(data);
+          this.emitPlats();
+        },
+        (error) => {
+          reject(error);
+        }
+      )
+
+    })
   }
 
   getPlatById(id: number) {

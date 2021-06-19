@@ -43,3 +43,23 @@
   /* your css needs */
   background-color: ivory;
 }
+
+.btn-allerg{
+  display: block;
+  width: auto;
+  line-height: 1em;
+  padding: 0.1em;
+  margin:0.1em;	
+  top : 0px;
+  color : green;
+  /* border: 1px solid  #ccc ;  
+  border-radius: 8px; */
+  /* -webkit-appearance:normal; */
+  font-size: .9em;
+  font-style: italic;
+  word-wrap: break-word;
+  text-align: center;
+  margin: 1px 1px;
+}
+
+/* text-align: center; position:fixed ; left: 2px; top :0; height: 20px */

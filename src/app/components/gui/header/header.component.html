@@ -13,7 +13,7 @@
           <!-- <div class="logo text-center text-sm-left mb-30 mb-sm-0"> -->
           <div class="logo"
             style="top:15px; position: absolute; text-align: left; left: 20px; height: 30px; width: 150px;">
-            <a href="index.html" aria-label=""><img [src]="refApiImages + 'divers/logo.jpg'" alt=""></a>
+            <a href="index.html" aria-label=""><img [src]="refApiImages + '/' + 'divers/logo.jpg'" alt=""></a>
           </div>
 
           <nav class="navbar-top pb-2 pb-md-0 position-relative">
@@ -115,8 +115,8 @@
 
           </ul>
         </li>
-        <li routerLinkActive="active"><a routerLink="/notFound">Menu du jour</a></li>
-        <li routerLinkActive="active"><a routerLink="/notFound">La Carte</a>
+        <li routerLinkActive="active"><a routerLink="/menujour">Menu du jour</a></li>
+        <li routerLinkActive="active"><a routerLink="/laCarte" style="cursor: pointer;">La Carte</a>
           <ul class="sub-menu">
             <li *ngFor="let cat of categories">
               <a [routerLink]="['/laCarte', cat.id]">{{cat.libelle}}</a>

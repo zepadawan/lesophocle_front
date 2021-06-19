@@ -41,14 +41,15 @@ export class CategorieService {
     })
   };
 
-  getCategorieNameById(id: number) {
+  async getCategorieNameById(id: number) {
     const url = `${environment.api + 'categories/' + id}`;
-    return new Promise((resolve, reject) => {
+    return await new Promise((resolve, reject) => {
       this.http.get(url).subscribe(
         (data: Result) => {
           if (data.status == 200) {
             this.categorie = data.args;
             resolve(data.args);
+
           } else {
             reject(data.message);
           }

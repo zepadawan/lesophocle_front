@@ -22,11 +22,14 @@ import { ShowPlatComponent } from './components/administration/plats/show-plat/s
 import { ShowImageComponent } from './components/administration/show-image/show-image.component';
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
 import { LocalizeComponent } from './components/gui/localize/localize.component';
+import { MenuDuJourComponent } from './components/restaurant/menu-du-jour/menu-du-jour.component';
 
 const routes: Routes = [
 
   { path: 'accueil', component: HomeComponent },
   { path: 'laCarte/:id', component: LaCarteComponent },
+  { path: 'menujour', component: MenuDuJourComponent },
+
   { path: 'lesBoissons', component: LesBoissonsComponent },
   { path: 'lesDesserts', component: LesDessertsComponent },
   { path: 'concerts', component: LesSoireesComponent },

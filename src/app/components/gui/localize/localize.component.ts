@@ -30,8 +30,8 @@ export class LocalizeComponent implements OnInit {
 
   addMarker() {
     this.marker.setPosition({
-      lat: 43.60920000523757,
-      lng: 7.07372001701674,
+      lat: 43.60906,
+      lng: 7.07351,
     })
     this.marker.setOpacity(1.0);
     this.marker.setLabel({
@@ -56,7 +56,6 @@ export class LocalizeComponent implements OnInit {
       this.center = {
         lat: 43.60920000523757,
         lng: 7.07372001701674,
-
       }
     })
     this.addMarker();

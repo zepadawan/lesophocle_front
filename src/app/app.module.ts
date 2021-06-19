@@ -56,6 +56,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { LocalizeComponent } from './components/gui/localize/localize.component';
 import { ConfigComponent } from './components/administration/config/config.component';
 import { ConfigService } from '../app/services/config.service';
+import { MenuDuJourComponent } from './components/restaurant/menu-du-jour/menu-du-jour.component';
 
 
 import { environment } from '../environments/environment';
@@ -102,6 +103,7 @@ export function ConfigLoader(configService: ConfigService) {
     ModalComponent,
     LocalizeComponent,
     ConfigComponent,
+    MenuDuJourComponent,
 
   ],
   imports: [

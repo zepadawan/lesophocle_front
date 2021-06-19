@@ -13,11 +13,9 @@ export class ConfigService {
 
   onLoad(url: string) {
     return new Promise((resolve) => {
-      //      this.http.get(url).pipe(map((res: any) => res.json()))
       this.http.get(url)
         .subscribe((config: Configuration) => {
           this.config = config;
-          console.log(this.config);
           resolve(true);
         });
     });

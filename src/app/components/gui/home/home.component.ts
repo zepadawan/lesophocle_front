@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit {
 
 
-  refApiImage = environment.api_image;
+  refApiImage = environment.api_image + '/';
   constructor(
     private categorieService: CategorieService,) { }
 

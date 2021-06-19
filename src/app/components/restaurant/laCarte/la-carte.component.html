@@ -1,21 +1,21 @@
 <node-header></node-header>
 
-<!-- <node-carousel></node-carousel> -->
+<node-carousel *ngIf="isCaroussel" [folder]="_pathImage"> </node-carousel>
 
 <div class="container">
-  <div class="table-responsive ">
+  <div class="table-responsive" id="htmlData" #htmlData>
     <table class="table table-hover table-striped">
       <thead>
         <tr class="m-0">
           <th class="w-70">{{platType}}</th>
-          <th class="w-10">Prix</th>
+          <th class="w-20">Prix</th>
           <th class="w-10">Image</th>
           <th class="w-10">Allergènes</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let plat of plats; let index = index" class="m-0">
-          <td class="w-95" *ngIf="plat.actif">
+          <td class="w-70" *ngIf="plat.actif">
             <h5 class="" style="font-style: italic; font-size: 16px; text-decoration: underline;">{{ plat.libelle}}
             </h5>
             <ul>
@@ -24,40 +24,26 @@
               <li class="plat-description">{{ plat.poids_dimension}}</li>
             </ul>
           </td>
-          <td class="w-10" *ngIf="plat.actif">
+          <td class="w-20" *ngIf="plat.actif">
             {{plat.prix}} €
           </td>
-          <td class="m-10" *ngIf="plat.actif" style="cursor: pointer;">
-            <div>
+          <td class="m-10" *ngIf="plat.actif " style="cursor: pointer;">
+            <ng-template [ngIf]="!isAdmin" [ngIfElse]="pasPrint">
               <a [routerLink]="['/show-image', plat.id]">
-                <img [src]="urlImage  + plat.nom_image" alt="" style="width: 50px; height: 50px;">
+                <img [src]="urlImage +  _pathImage + '/' + plat.nom_image" alt="" style="width: 50px; height: 50px;">
               </a>
-            </div>
+            </ng-template>
+            <ng-template #pasPrint>
+              photo
+            </ng-template>
           </td>
           <td class="m-10">
-            <a mat-raised-button style="background-color: lavender; left :20px ;height: auto ;width:250px;"
-              class="mat-raised-button mat-accent" (click)="editAllergenes()">
-              Allergenes : ({{plat.allergenes}})
+            <a mat-raised-button style="background-color: lavender; left :20px ;height: 30px ;width:auto; "
+              class="mat-raised-button mat-accent text-center" (click)="editAllergenes()">
+              <span class="btn-allerg">({{plat.allergenes}})</span>
             </a>
-
-
           </td>
         </tr>
-        <!-- <td class="m-10" *ngIf="plat.actif && plat.nom_image" style="cursor: pointer;">
-            <div>
-              <a [routerLink]="['/show-image',plat.id]">
-                <img [src]=" urlImage + apathImage + '/' +   plat.nom_image" style="width: 50px; height: 50px;">
-              </a>
-            </div>
-          </td>
-          <div>
-            <!-- <a mat-raised-button style="left :10px ;height: auto ;width:auto;" class="mat-raised-button mat-accent"
-                (click)="editAllergenes()">
-                Allergenes : ({{plat.allergenes}})
-              </a> 
-  </div>
-  </td>
-  </tr> -->
       </tbody>
       <div *ngIf="platType == 'Les Pizzas'">
         <div class="text-center pied-1">
@@ -78,16 +64,14 @@
           Accompagnées de Frites et Salades
         </div>
       </div>
-
-
       <div class="text-center pied-4 ">
         - SERVICE COMPRIS -
       </div>
-      <div class="sign-btn text-center">
-        <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/accueil']" routerLinkActive="router-link-active">
-          Retour à l'accueil</button>
-      </div>
-
     </table>
-
+    <div class="sign-btn text-center">
+      <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/accueil']" routerLinkActive="router-link-active">
+        Retour à l'accueil</button>
+      <div *ngIf="isAdmin"> <button (click)="downloadAsPDF()">Export To PDF</button></div>
+    </div>
   </div>
+</div>

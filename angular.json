@@ -55,7 +55,7 @@
               "node_modules/tinymce/skins/ui/oxide/content.inline.min.css"
             ],
             "scripts": [
-              "node_modules/tinymce/tinymce.min.js"
+              "node_modules/tinymce/tinymce.min.js",
             ],
             "vendorChunk": true,
             "extractLicenses": false,
