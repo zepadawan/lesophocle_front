@@ -28,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // Google
 
@@ -58,8 +59,14 @@ import { ConfigComponent } from './components/administration/config/config.compo
 import { ConfigService } from '../app/services/config.service';
 import { MenuDuJourComponent } from './components/restaurant/menu-du-jour/menu-du-jour.component';
 
-
 import { environment } from '../environments/environment';
+import { AddMenuComponent } from './components/administration/menujour/add-menu/add-menu.component';
+import { EditMenuComponent } from './components/administration/menujour/edit-menu/edit-menu.component';
+import { AdminMenuComponent } from './components/administration/menujour/admin-menu/admin-menu.component';
+import { AdminTexteComponent } from './components/administration/textes/admin-texte/admin-texte.component';
+import { CreateTexteComponent } from './components/administration/textes/create-texte/create-texte.component';
+import { EditTexteComponent } from './components/administration/textes/edit-texte/edit-texte.component';
+import { ShowTexteComponent } from './components/administration/textes/show-texte/show-texte.component';
 export function ConfigLoader(configService: ConfigService) {
   //Note: this factory need to return a function (that return a promise)
   return () => configService.onLoad(environment.configFile);
@@ -104,6 +111,15 @@ export function ConfigLoader(configService: ConfigService) {
     LocalizeComponent,
     ConfigComponent,
     MenuDuJourComponent,
+    AddMenuComponent,
+    EditMenuComponent,
+    AdminMenuComponent,
+
+    AdminTexteComponent,
+    CreateTexteComponent,
+    EditTexteComponent,
+    ShowTexteComponent
+
 
   ],
   imports: [
@@ -121,7 +137,8 @@ export function ConfigLoader(configService: ConfigService) {
     MatFormFieldModule,
     MatDialogModule,
     MatCarouselModule.forRoot(),
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatGridListModule
   ],
   entryComponents: [
     MessagesComponent,

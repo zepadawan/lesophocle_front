@@ -1,3 +1,70 @@
 <node-header></node-header>
+<br>
 
-Menu de jour
+<div class="container" id="htmlData" #htmlData>
+  <div class="text-center" *ngIf="menuJour">
+
+    <div class="boite">
+      <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile class="titre">
+          <div class="tittre">Les Plats du Jour à {{menuJour.prixdujour}} €</div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <br>
+
+    <mat-grid-list cols="2" rowHeight="200px" gutterSize="20px">
+      <mat-grid-tile class="boite">
+        <div [innerHTML]="menuJour.menuviande"></div>
+      </mat-grid-tile>
+      <mat-grid-tile class="boite">
+        <div [innerHTML]="menuJour.menupoisson"></div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+
+    <mat-grid-list class="boite" cols="1" rowHeight="60px">
+      <mat-grid-tile [rowspan]="1">
+        <div class="titre">Formules à {{menuJour.prixformule}} €</div>
+      </mat-grid-tile>
+      <mat-grid-tile class="sous-titre">
+        <div>Entrée / Plat du Jour </div>
+        <div style=" padding-left: 10px; text-decoration: underline ;"> OU </div>
+        <div style="padding-left: 10px">Plat du Jour / Dessert</div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+
+    <mat-grid-list class="boite" cols="1" rowHeight="60px">
+      <mat-grid-tile [rowspan]="1">
+        <div class="titre">Menu du Jour à {{menuJour.prixmenu}} €</div>
+      </mat-grid-tile>
+      <mat-grid-tile class="sous-titre">
+        <div>Entrée / Plat du Jour / Dessert </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+
+    <mat-grid-list class="boite" rowHeight="150px">
+      <h2>Les Suggestions</h2>
+      <mat-grid-list cols="2" rowHeight="100px">
+        <mat-grid-tile class="sous-titre" cols="2">
+          <div>
+            <div>
+              <div>{{menuJour.libellesugg1}}</div>
+              <div>{{menuJour.descsugg1}}</div>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            <p>{{menuJour.prixsugg1}} €</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-grid-list>
+    <br>
+  </div>
+  <div>
+    <div *ngIf="isAdmin"> <button (click)="downloadAsPDF()">Export To PDF</button></div>
+  </div>

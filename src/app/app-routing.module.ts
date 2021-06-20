@@ -23,12 +23,14 @@ import { ShowImageComponent } from './components/administration/show-image/show-
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
 import { LocalizeComponent } from './components/gui/localize/localize.component';
 import { MenuDuJourComponent } from './components/restaurant/menu-du-jour/menu-du-jour.component';
+import { EditMenuComponent } from './components/administration/menujour/edit-menu/edit-menu.component';
 
 const routes: Routes = [
 
   { path: 'accueil', component: HomeComponent },
   { path: 'laCarte/:id', component: LaCarteComponent },
   { path: 'menujour', component: MenuDuJourComponent },
+  { path: 'edit-menu', component: EditMenuComponent },
 
   { path: 'lesBoissons', component: LesBoissonsComponent },
   { path: 'lesDesserts', component: LesDessertsComponent },

@@ -1,0 +1,32 @@
+mat-grid-tile  {
+  /* background: lightblue; */
+}
+
+.boite{
+  border: 1px;
+  border-color: black;
+  border-width: 1px;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px lightblue;
+  height: 50px;
+  text-align: center;
+}
+
+.titre{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+  font-family: 'Verdana', Courier, monospace;
+}
+
+.sous-titre{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12px;
+  font-family: 'Verdana', Courier, monospace;
+  
+
+}

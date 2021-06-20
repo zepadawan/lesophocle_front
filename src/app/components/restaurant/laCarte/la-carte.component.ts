@@ -69,6 +69,7 @@ export class LaCarteComponent implements OnChanges, OnInit, OnDestroy {
   };
 
   ngOnInit(): void {
+    this.isAdmin = this.userService.isAdmin;
     this.urlImage = `${environment.api_image}`;
     this.route.params.subscribe(
       (request) => {

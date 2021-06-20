@@ -43,7 +43,6 @@ export class CarouselComponent implements OnInit, OnChanges {
     this.filesDirectoryService.getFiles(this.folder)
       .then((data: Result) => {
         this.images = data.args;
-
       })
       .catch();
 
