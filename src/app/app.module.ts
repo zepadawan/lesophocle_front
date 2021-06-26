@@ -29,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { } from '@angular/common'
 
 // Google
 
@@ -52,7 +53,7 @@ import { ShowImageComponent } from './components/administration/show-image/show-
 import { MessagesComponent } from './components/administration/messages/messages.component';
 import { CarouselComponent } from './components/administration/carousel/carousel.component';
 import { ModalComponent } from './components/administration/modal/modal.component';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { MatCarouselModule } from '@ngbmodule/material-carousel';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LocalizeComponent } from './components/gui/localize/localize.component';
 import { ConfigComponent } from './components/administration/config/config.component';
@@ -67,6 +68,22 @@ import { AdminTexteComponent } from './components/administration/textes/admin-te
 import { CreateTexteComponent } from './components/administration/textes/create-texte/create-texte.component';
 import { EditTexteComponent } from './components/administration/textes/edit-texte/edit-texte.component';
 import { ShowTexteComponent } from './components/administration/textes/show-texte/show-texte.component';
+import { PrintmenuComponent } from './components/administration/menujour/printmenu/printmenu.component';
+import { PrintplatComponent } from './components/administration/plats/printplat/printplat.component';
+import { AddConcertComponent } from './components/administration/concerts/add-concert/add-concert.component';
+import { AdminConcertComponent } from './components/administration/concerts/admin-concert/admin-concert.component';
+import { EditConcertComponent } from './components/administration/concerts/edit-concert/edit-concert.component';
+import { InscriptionConcertComponent } from './components/administration/concerts/inscription-concert/inscription-concert.component';
+import { AddPrivatisationComponent } from './components/administration/privatisation/add-privatisation/add-privatisation.component';
+import { AdminPrivatisationComponent } from './components/administration/privatisation/admin-privatisation/admin-privatisation.component';
+import { EditPrivatisationComponent } from './components/administration/privatisation/edit-privatisation/edit-privatisation.component';
+import { InscriptionPrivatisationComponent } from './components/administration/privatisation/inscription-privatisation/inscription-privatisation.component';
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { AddClientComponent } from './components/administration/clients/add-client/add-client.component';
+import { AdminClientComponent } from './components/administration/clients/admin-client/admin-client.component';
+import { EditClientComponent } from './components/administration/clients/edit-client/edit-client.component';
+import { CustomClientComponent } from './components/administration/clients/custom-client/custom-client.component';
+
 export function ConfigLoader(configService: ConfigService) {
   //Note: this factory need to return a function (that return a promise)
   return () => configService.onLoad(environment.configFile);
@@ -118,7 +135,22 @@ export function ConfigLoader(configService: ConfigService) {
     AdminTexteComponent,
     CreateTexteComponent,
     EditTexteComponent,
-    ShowTexteComponent
+    ShowTexteComponent,
+    PrintmenuComponent,
+    PrintplatComponent,
+    AddConcertComponent,
+    AdminConcertComponent,
+    EditConcertComponent,
+    InscriptionConcertComponent,
+    AddPrivatisationComponent,
+    AdminPrivatisationComponent,
+    EditPrivatisationComponent,
+    InscriptionPrivatisationComponent,
+    AddClientComponent,
+    AdminClientComponent,
+    EditClientComponent,
+    CustomClientComponent,
+
 
 
   ],
@@ -138,7 +170,8 @@ export function ConfigLoader(configService: ConfigService) {
     MatDialogModule,
     MatCarouselModule.forRoot(),
     GoogleMapsModule,
-    MatGridListModule
+    MatGridListModule,
+
   ],
   entryComponents: [
     MessagesComponent,

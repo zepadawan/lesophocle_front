@@ -1,0 +1,79 @@
+<div class="col-sm-6 offset-sm-3 mt-2">
+
+    <form [formGroup]="clientForm">
+
+      <div class="col-md-5">
+
+        <div class="form-group">
+          <label class="radio-inline">
+            <input type="radio" id="sexe"  formControlName="sexe" [value]="0">M.
+          </label>
+          <label class="radio-inline" style="padding-left: 10px;">
+            <input type="radio" id="sexe" formControlName="sexe" [value]="1"> Mme
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Nom : </label>
+          <input type="text" placeholder="saisir le nom" id="lastname" formControlName="lastname"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="firstname">Prénom : </label>
+            <input type="text" placeholder="saisir le Prénom" id="firstname" formControlName="firstname"
+              class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="username">Surnom : </label>
+          <input type="text" placeholder="saisir le Surnom" id="username" formControlName="username"
+            class="form-control">
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">Email : </label>
+          <input type="text" placeholder="saisir l' email" id="email" formControlName="email"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="tel">Telephone : </label>
+          <input type="text" placeholder="saisir le numéro de téléphone" id="tel" formControlName="tel"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="adresse">Adresse : </label>
+          <input type="text" placeholder="saisir l'adresse" id="adresse" formControlName="adresse"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="ville">Ville : </label>
+          <input type="text" placeholder="saisir la ville" id="ville" formControlName="ville"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="cp">Code Postal : </label>
+          <input type="text" placeholder="saisir le code Postal" id="cp" formControlName="cp"
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="naissance">Date de Naissance : </label>
+          <input type="text" placeholder="saisir la date de Naissance" id="naissance" formControlName="naissance"
+            class="form-control">
+        </div>
+
+
+      </div>
+
+    </form>
+  </div>
+
+
+
+

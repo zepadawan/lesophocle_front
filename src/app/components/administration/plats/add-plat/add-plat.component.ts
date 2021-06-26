@@ -61,6 +61,7 @@ export class AddPlatComponent implements OnInit {
       prix: ['', [Validators.required]],
       ordre: ['',],
       poids_dimension: ['',],
+      allergenes: ['',],
       description: ['',],
       sous_titre: ['',],
       sampleFile: ['',],
@@ -93,6 +94,7 @@ export class AddPlatComponent implements OnInit {
     newPlat.description = this.platForm.get('description').value;
     newPlat.sous_titre = this.platForm.get('sous_titre').value;
     newPlat.ordre = this.platForm.get('ordre').value;
+    newPlat.allergenes = this.platForm.get('allergenes').value;
 
     if (this.platForm.get('sampleFile').value) {
       newPlat.nom_image = (this.platForm.get('sampleFile').value).name;

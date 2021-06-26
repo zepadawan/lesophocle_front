@@ -29,7 +29,7 @@
           </td>
           <td class="m-10" *ngIf="plat.actif " style="cursor: pointer;">
             <ng-template [ngIf]="!isAdmin" [ngIfElse]="pasPrint">
-              <a [routerLink]="['/show-image', plat.id]">
+              <a [routerLink]="['/show-image', plat.id]" *ngIf="_pathImage">
                 <img [src]="urlImage +  _pathImage + '/' + plat.nom_image" alt="" style="width: 50px; height: 50px;">
               </a>
             </ng-template>
@@ -45,33 +45,36 @@
           </td>
         </tr>
       </tbody>
-      <div *ngIf="platType == 'Les Pizzas'">
-        <div class="text-center pied-1">
-          Toute Modification ou rajout d'ingrédients, supplément de 1,00€
-        </div>
-        <div class="text-center pied-2">
-          Toutes nos Pizzas sont fabriquées et préparées par notre Pizzaiolo
-        </div>
-        <div class="text-center pied-3">
-          FROMAGE MOZZARELLA : FIOR DI LATTE , D'ITALIE
-        </div>
-      </div>
-      <div *ngIf="platType == 'Les Viandes'">
-        <div class="text-center pied-1">
-          Tout changement d'accompagnement, supplément de 1,50€
-        </div>
-        <div class="text-center pied-2">
-          Accompagnées de Frites et Salades
-        </div>
-      </div>
-      <div class="text-center pied-4 ">
-        - SERVICE COMPRIS -
-      </div>
     </table>
+
+    <div *ngIf="platType == 'Les Pizzas'">
+      <div class="text-center pied-1">
+        Toute Modification ou rajout d'ingrédients, supplément de 1,00€
+      </div>
+      <div class="text-center pied-2">
+        Toutes nos Pizzas sont fabriquées et préparées par notre Pizzaiolo
+      </div>
+      <div class="text-center pied-3">
+        FROMAGE MOZZARELLA : FIOR DI LATTE , D'ITALIE
+      </div>
+    </div>
+    <div *ngIf="platType == 'Les Viandes'">
+      <div class="text-center pied-1">
+        Tout changement d'accompagnement, supplément de 1,50€
+      </div>
+      <div class="text-center pied-2">
+        Accompagnées de Frites et Salades
+      </div>
+    </div>
+    <div class="text-center pied-4 ">
+      - SERVICE COMPRIS -
+    </div>
     <div class="sign-btn text-center">
       <button class="btn theme-btn--dark1 btn--md" [routerLink]="['/accueil']" routerLinkActive="router-link-active">
         Retour à l'accueil</button>
       <div *ngIf="isAdmin"> <button (click)="downloadAsPDF()">Export To PDF</button></div>
     </div>
+
   </div>
 </div>
+<node-footer></node-footer>

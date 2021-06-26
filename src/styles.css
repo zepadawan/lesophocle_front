@@ -12,3 +12,82 @@
     font-size: 10px;
 }
 
+mat-grid-tile  {
+  /* background: lightblue; */
+}
+
+.boite{
+  border: 1px;
+  border-color: black;
+  border-width: 1px;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px lightblue;
+  height: 50px;
+  text-align: center;
+}
+
+.titre{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+  font-family: 'Verdana', Courier, monospace;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin-top: 1px;
+
+}
+
+.sous-titre{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12px;
+  font-family: 'Verdana', Courier, monospace;
+}
+
+.suggestion{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 14px;
+  font-family: 'Verdana', Courier, monospace;
+}
+
+.description{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 10px;
+  font-family: 'Verdana', Courier, monospace;
+}
+
+
+.header1{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 26px;
+  font-family: 'Verdana', Courier, monospace;
+}
+
+.header2{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  font-family: 'Verdana', Courier, monospace;
+  padding-bottom: 10px;
+}
+
+.plat-description {
+  font-style: italic;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 12px;
+  height: 1em;
+  margin-left: 20px;
+}
+

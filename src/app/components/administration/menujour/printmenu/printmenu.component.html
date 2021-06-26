@@ -1,0 +1,106 @@
+<div class="container" id="htmlData" #htmlData>
+  <div class="text-center" *ngIf="menuJour">
+    <br>
+    <div class="header1 container">BRASSERIE SOPHOCLE</div>
+    <br>
+    <div class="header2 container">{{jour}}</div>
+
+    <div class="boite">
+      <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile class="titre">
+          <div class="tittre">Les Plats du Jour à {{menuJour.prixdujour}} €</div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <br>
+
+    <mat-grid-list cols="2" rowHeight="170px" gutterSize="20px">
+      <mat-grid-tile class="boite">
+        <div [innerHTML]="menuJour.menuviande"></div>
+      </mat-grid-tile>
+      <mat-grid-tile class="boite">
+        <div [innerHTML]="menuJour.menupoisson"></div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+
+    <mat-grid-list class="boite" cols="1" rowHeight="60px">
+      <mat-grid-tile [rowspan]="1">
+        <div class="titre">Formules à {{menuJour.prixformule}} €</div>
+      </mat-grid-tile>
+      <mat-grid-tile class="sous-titre">
+        <div>Entrée / Plat du Jour </div>
+        <div style=" padding-left: 10px; text-decoration: underline ;"> OU </div>
+        <div style="padding-left: 10px">Plat du Jour / Dessert</div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+
+    <mat-grid-list class="boite" cols="1" rowHeight="60px">
+      <mat-grid-tile [rowspan]="1">
+        <div class="titre">Menu du Jour à {{menuJour.prixmenu}} €</div>
+      </mat-grid-tile>
+      <mat-grid-tile class="sous-titre">
+        <div>Entrée / Plat du Jour / Dessert </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+
+    <mat-grid-list cols="1" class="boite" rowHeight="240px">
+      <div class="titre">Les Suggestions</div>
+
+      <mat-grid-list cols="2" rowHeight="60px">
+        <mat-grid-tile class="sous-titre" cols="2">
+          <div>
+            <div>
+              <div class="suggestion">{{menuJour.libellesugg1}}</div>
+              <div class="description">{{menuJour.descsugg1}}</div>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            <p class="sous-titre">{{menuJour.prixsugg1}} €</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="60px">
+        <mat-grid-tile class="sous-titre" cols="2">
+          <div>
+            <div>
+              <div class="suggestion">{{menuJour.libellesugg2}}</div>
+              <div class="description">{{menuJour.descsugg2}}</div>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            <p class="sous-titre">{{menuJour.prixsugg2}} €</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="60px" *ngIf="menuJour.libellesugg3">
+        <mat-grid-tile class="sous-titre" cols="2">
+          <div>
+            <div>
+              <div class="suggestion">{{menuJour.libellesugg3}}</div>
+              <div class="description">{{menuJour.descsugg3}}</div>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            <p class="sous-titre">{{menuJour.prixsugg3}} €</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </mat-grid-list>
+    <br>
+
+    <div class="header2">
+      PRIX NETS
+    </div>
+  </div>

@@ -50,6 +50,12 @@ export class EditMenuComponent implements OnInit {
           libellesugg1: [this.menuJour.libellesugg1, []],
           prixsugg1: [this.menuJour.prixsugg1, []],
           descsugg1: [this.menuJour.descsugg1, []],
+          libellesugg2: [this.menuJour.libellesugg2, []],
+          prixsugg2: [this.menuJour.prixsugg2, []],
+          descsugg2: [this.menuJour.descsugg2, []],
+          libellesugg3: [this.menuJour.libellesugg3, []],
+          prixsugg3: [this.menuJour.prixsugg3, []],
+          descsugg3: [this.menuJour.descsugg3, []],
         })
       })
       .catch();
@@ -65,6 +71,12 @@ export class EditMenuComponent implements OnInit {
       libellesugg1: ['',],
       prixsugg1: ['',],
       descsugg1: ['',],
+      libellesugg2: ['',],
+      prixsugg2: ['',],
+      descsugg2: ['',],
+      libellesugg3: ['',],
+      prixsugg3: ['',],
+      descsugg3: ['',],
 
     });
   }
@@ -79,6 +91,12 @@ export class EditMenuComponent implements OnInit {
     newMenujour.libellesugg1 = this.platForm.get('libellesugg1').value;
     newMenujour.prixsugg1 = this.platForm.get('prixsugg1').value;
     newMenujour.descsugg1 = this.platForm.get('descsugg1').value;
+    newMenujour.libellesugg2 = this.platForm.get('libellesugg2').value;
+    newMenujour.prixsugg2 = this.platForm.get('prixsugg2').value;
+    newMenujour.descsugg2 = this.platForm.get('descsugg2').value;
+    newMenujour.libellesugg3 = this.platForm.get('libellesugg3').value;
+    newMenujour.prixsugg3 = this.platForm.get('prixsugg3').value;
+    newMenujour.descsugg3 = this.platForm.get('descsugg3').value;
 
     this.menujourService.updateMenuJour(id, newMenujour)
       .then(

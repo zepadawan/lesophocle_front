@@ -8,6 +8,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import htmlToPdfmake from 'html-to-pdfmake';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'node-menu-du-jour',
@@ -18,19 +19,20 @@ export class MenuDuJourComponent implements OnChanges, OnInit, OnDestroy {
 
   menuJour: MenuJour;
   menuJourSubscription: Subscription;
-  // isAdmin = true;
+  isAdmin: boolean;
 
   @ViewChild('htmlData') htmlData: ElementRef;
 
-  constructor(private menujourService: MenujourService) { }
+  constructor(private menujourService: MenujourService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
+    this.isAdmin = this.userService.isAdmin;
     this.menujourService.getMenuJour()
       .then(
         (data: Result) => {
           console.log('data', data);
           this.menuJour = data.args;
-          console.log('this.menuJour', this.menuJour.prixmenu);
         })
       .catch(
         (err) => {

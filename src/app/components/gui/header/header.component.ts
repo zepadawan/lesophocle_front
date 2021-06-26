@@ -29,12 +29,10 @@ export class HeaderComponent implements OnInit {
   refApiImages = environment.api_image;
 
 
-  @Input() isAuth;
+  @Input() isAuth : boolean;
   @Input() user: User;
-  @Input() isAdmin;
-  @Input() isSuperAdmin;
-
-
+  @Input() isAdmin : boolean = true;
+  @Input() isSuperAdmin : boolean;
 
   constructor(private cartService: CartService,
     private userService: UserService,
@@ -43,6 +41,9 @@ export class HeaderComponent implements OnInit {
     private carteService: CarteService) { }
 
   ngOnInit(): void {
+
+    // a enlever
+
     this.carts = this.cartService.carts;
     this.categories = this.categorieService.categories;
     this.cartes = this.carteService.cartes;

@@ -5,8 +5,8 @@
       <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" [loop]="true" [hideArrows]="false"
         [hideIndicators]="true" color="accent" maxWidth="1000px" [maintainAspectRatio]="true" proportion="40" slides="5"
         [useKeyboard]="true" [useMouseWheel]="false" orientation="ltr" ariaLabel="Sliding carousel" [lazyLoad]="false">
-        <mat-carousel-slide #matCarouselSlide *ngFor="let image of images; let i = index"
-          [image]="apathImage + '/' + image" overlayColor="#00000040" [hideOverlay]="false">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let image of images; let i = index" [image]="apathImage + image"
+          overlayColor="#00000040" [hideOverlay]="false">
         </mat-carousel-slide>
       </mat-carousel>
     </div>
@@ -16,8 +16,8 @@
       <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="1500px"
         proportion="50" slides="5" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true"
         [useMouseWheel]="false" orientation="ltr">
-        <mat-carousel-slide #matCarouselSlide *ngFor="let image of images; let i = index"
-          [image]="apathImage + '/' + image" overlayColor="#00000040" [hideOverlay]="false">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let image of images; let i = index" [image]="apathImage  + image"
+          overlayColor="#00000040" [hideOverlay]="false">
         </mat-carousel-slide>
       </mat-carousel>
     </div>

@@ -80,7 +80,7 @@
       id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto main-menu d-flex text-dark">
         <li routerLinkActive="active"><a routerLink="/accueil">Accueil</a></li>
-        <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/administration">Administration</a>
+        <li routerLinkActive="active" ><a routerLink="/administration">Administration</a>
           <ul class="sub-menu" style="width :auto">
             <li>
               <p class=""> <i class="icon-star"></i>
@@ -117,11 +117,16 @@
                 gestion catégories
               </p>
             </li>
+            <li>
+              <p routerLink="/admin-client"><i class="icon-star"></i>
+                gestion des clients
+              </p>
+            </li>
 
           </ul>
         </li>
         <li routerLinkActive="active"><a routerLink="/menujour">Menu du jour</a></li>
-        <li routerLinkActive="active"><a routerLink="/laCarte" style="cursor: pointer;">La Carte</a>
+        <li routerLinkActive="active"><a routerLink="/laCarte/1" style="cursor: pointer;">La Carte</a>
           <ul class="sub-menu">
             <li *ngFor="let cat of categories">
               <a [routerLink]="['/laCarte', cat.id]">{{cat.libelle}}</a>

@@ -37,6 +37,10 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "../site",
+            "allowedCommonJsDependencies": [
+              "raf",
+              "@babel/runtime-corejs3"
+            ],
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -55,7 +59,7 @@
               "node_modules/tinymce/skins/ui/oxide/content.inline.min.css"
             ],
             "scripts": [
-              "node_modules/tinymce/tinymce.min.js",
+              "node_modules/tinymce/tinymce.min.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,

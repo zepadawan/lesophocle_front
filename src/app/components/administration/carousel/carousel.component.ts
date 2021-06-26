@@ -38,8 +38,8 @@ export class CarouselComponent implements OnInit, OnChanges {
     // if (!changes.folder.firstChange) {
     const current = changes.folder.currentValue;
     this.folder = current;
-    this.apathImage = `${environment.api_image}` + this.folder;
-    console.log('this.apathImage', this.apathImage);
+    this.apathImage = `${environment.api_image}` + this.folder + '/';
+    // console.log('this.apathImage', this.apathImage);
     this.filesDirectoryService.getFiles(this.folder)
       .then((data: Result) => {
         this.images = data.args;
