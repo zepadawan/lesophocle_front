@@ -28,6 +28,9 @@ import { PrintmenuComponent } from './components/administration/menujour/printme
 import { AdminClientComponent } from './components/administration/clients/admin-client/admin-client.component';
 import { AddClientComponent } from './components/administration/clients/add-client/add-client.component';
 import { EditClientComponent } from './components/administration/clients/edit-client/edit-client.component';
+import { AdminConcertComponent } from './components/administration/concerts/admin-concert/admin-concert.component';
+import { AddConcertComponent } from './components/administration/concerts/add-concert/add-concert.component';
+import { EditConcertComponent } from './components/administration/concerts/edit-concert/edit-concert.component';
 
 const routes: Routes = [
 
@@ -39,6 +42,10 @@ const routes: Routes = [
 
   // Evenements
   { path: 'concerts', component: LesSoireesComponent },
+  { path: 'admin-concert', component: AdminConcertComponent, },
+  { path: 'add-concert', component: AddConcertComponent, },
+  { path: 'edit-concert/:id', component:  EditConcertComponent, },
+
   { path: 'soirees', component: LesSoireesPriveesComponent },
 
   // administration
@@ -64,7 +71,6 @@ const routes: Routes = [
   { path: 'menujour', component: MenuDuJourComponent },
   { path: 'edit-menu', component: EditMenuComponent },
   { path: 'printmenu', component: PrintmenuComponent },
-
 
   // Categories
   { path: 'admin-categorie', component: AdminCategorieComponent, },

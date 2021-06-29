@@ -1,0 +1,99 @@
+<div class="container row">
+  <div class="col-md-6">
+    <form [formGroup]="concertForm" id="concertForm">
+
+      <div class="row col-sm-10" style= "height: 40px;">
+        <div class="col1" >
+          <label>Date de l'évenement :</label>
+        </div>
+        <div class="col2">
+          <input formControlName ="date">
+        </div>
+      </div>
+
+      <div class="row col-sm-10" style= "height: 40px;">
+        <div class="col1" >
+          <label>prix :</label>
+        </div>
+        <div class="col2">
+          <input formControlName ="prix" >
+        </div>
+      </div>
+
+
+      <div class="row col-sm-10" style= "height: 40px;">
+        <div class="col1" >
+          <label>heure de début :</label>
+        </div>
+        <div class="col2">
+          <input formControlName ="heuredebut" >
+        </div>
+      </div>
+
+      <div class="row col-sm-10" style= "height: 40px;">
+        <div class="col1" >
+          <label>Heure de fin :</label>
+        </div>
+        <div class="col2">
+          <input  formControlName ="heurefin" >
+        </div>
+      </div>
+
+      <div class="row col-sm-10" style= "height: 40px;">
+        <div class="col1" >
+          <label>Heure du fin :</label>
+        </div>
+        <div class="col2">
+          <input  formControlName ="dinerdebut">
+        </div>
+      </div>
+
+      <div class="row col-sm-10" style= "height: 40px;">
+        <div class="col1" >
+          <label>Nombre de personnes totales :</label>
+        </div>
+        <div class="col2">
+          <input  formControlName ="nbpersmax" type="text">
+        </div>
+      </div>
+
+      <div class="row col-sm-10">
+        <div class="col1" >
+          <label>Description :</label>
+        </div>
+        <div class="col2" >
+          <textarea  formControlName ="description">
+          </textarea>
+        </div>
+      </div>
+
+      <div class="row col-sm-10">
+        <div class="col1" >
+          <label>Info supplémentaire :</label>
+        </div>
+        <div class="col2" >
+          <textarea  formControlName ="infosup">
+          </textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="col-md-6">
+    <button type="button" (click)="filePicker.click()" class="btn btn-success btn--md m-2">Importer une
+      image</button>
+
+    <input style="display: none;" type="file" name="sampleFile" #filePicker (change)="onImagePick($event)"
+      class="form-control" >
+    <div class="image-preview" *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="">
+      <li *ngIf="imagePreview">
+        <a *ngIf="imagePreview"  routerLinkActive="router-link-active">
+          <span *ngIf="imagePreview" data-placement="bottom " title="Agrandir" class="icon-magnifier "></span>
+        </a>
+      </li>
+    </div>
+  </div>
+
+</div>

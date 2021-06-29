@@ -1,1 +1,13 @@
-<p>add-concert works!</p>
+<node-header-admin [page]="page" [parentPage]="parentPage" [currentPage]="currentpage"></node-header-admin>
+
+<div class="row">
+  <div class="alert alert-danger text-center" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="alert alert-success text-center" role="alert" *ngIf="successMessage">{{successMessage}}</div>
+</div>
+
+<node-custom-concerts [concertForm] = "concertForm"></node-custom-concerts>
+
+<button type="button" (click)="onSubmit()" class="btn theme-btn--dark1 btn--md m-2"
+[disabled]="concertForm.invalid" >Créer le Concert</button>
+<button type="button" (click)="onExit()" class="btn theme-btn--dark1 btn--md m-2">Annuler</button>
+

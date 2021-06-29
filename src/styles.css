@@ -1,22 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
-.error{
-  font-style: italic;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 10px;
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 2px;
 }
 
 .error {
-    font-style: italic;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 10px;
+  font-style: italic;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 10px;
 }
 
-mat-grid-tile  {
-  /* background: lightblue; */
-}
-
-.boite{
+.boite {
   border: 1px;
   border-color: black;
   border-width: 1px;
@@ -27,67 +24,65 @@ mat-grid-tile  {
   text-align: center;
 }
 
-.titre{
+.titre {
   text-align: center;
   font-weight: bold;
   font-style: italic;
   font-size: 18px;
-  font-family: 'Verdana', Courier, monospace;
+  font-family: "Verdana", Courier, monospace;
   padding-top: 5px;
   padding-bottom: 0px;
   margin-top: 1px;
-
 }
 
-.sous-titre{
+.sous-titre {
   text-align: center;
   font-weight: bold;
   font-style: italic;
   font-size: 12px;
-  font-family: 'Verdana', Courier, monospace;
+  font-family: "Verdana", Courier, monospace;
 }
 
-.suggestion{
+.suggestion {
   text-align: center;
   font-weight: bold;
   font-style: italic;
   text-decoration: underline;
   font-size: 14px;
-  font-family: 'Verdana', Courier, monospace;
+  font-family: "Verdana", Courier, monospace;
 }
 
-.description{
+.description {
   text-align: center;
   font-weight: bold;
   font-style: italic;
   font-size: 10px;
-  font-family: 'Verdana', Courier, monospace;
+  font-family: "Verdana", Courier, monospace;
 }
 
-
-.header1{
+.header1 {
   text-align: center;
   font-weight: bold;
   font-style: italic;
   text-decoration: underline;
   font-size: 26px;
-  font-family: 'Verdana', Courier, monospace;
+  font-family: "Verdana", Courier, monospace;
 }
 
-.header2{
+.header2 {
   text-align: center;
   font-weight: bold;
   font-style: italic;
   font-size: 20px;
-  font-family: 'Verdana', Courier, monospace;
+  font-family: "Verdana", Courier, monospace;
   padding-bottom: 10px;
 }
 
 .plat-description {
   font-style: italic;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-size: 12px;
   height: 1em;
   margin-left: 20px;
 }
-

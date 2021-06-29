@@ -29,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+
 import { } from '@angular/common'
 
 // Google
@@ -83,6 +84,8 @@ import { AddClientComponent } from './components/administration/clients/add-clie
 import { AdminClientComponent } from './components/administration/clients/admin-client/admin-client.component';
 import { EditClientComponent } from './components/administration/clients/edit-client/edit-client.component';
 import { CustomClientComponent } from './components/administration/clients/custom-client/custom-client.component';
+import { CustomConcertComponent } from './components/administration/concerts/custom-concert/custom-concert.component';
+
 
 export function ConfigLoader(configService: ConfigService) {
   //Note: this factory need to return a function (that return a promise)
@@ -150,6 +153,8 @@ export function ConfigLoader(configService: ConfigService) {
     AdminClientComponent,
     EditClientComponent,
     CustomClientComponent,
+    CustomConcertComponent,
+
 
 
 

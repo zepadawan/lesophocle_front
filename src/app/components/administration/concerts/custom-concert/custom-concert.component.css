@@ -1,0 +1,53 @@
+.col1 {
+  /* background-color: blue; */
+  text-align: center;
+  text-align: right;
+  flex: 0 0 auto;
+  width: 30%;
+}
+
+.col1 label {
+  margin-top: 9px;
+}
+
+.col2 {
+  /* background-color: red; */
+  text-align: left;
+
+  flex: 0 0 auto;
+  width: 30%;
+}
+
+.col2 input {
+  margin-top: 7px;
+  width: 400px;
+  border: 1px;
+  border-color: black;
+  border-width: 1px;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px lightblue;
+}
+
+.col2 textarea {
+  margin-top: 7px;
+  height: 150px;
+  width: 400px;
+  border: 1px;
+  border-color: black;
+  border-width: 1px;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px lightblue;
+}
+
+.boite {
+  border: 1px;
+  border-color: black;
+  border-width: 1px;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px lightblue;
+  height: 50px;
+  text-align: center;
+}
