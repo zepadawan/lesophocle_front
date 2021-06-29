@@ -12,6 +12,7 @@ export class CustomConcertComponent implements OnInit {
   @Input() concertForm :  FormGroup;
   @Input() imagePreview : string;
   evenement: Evenement;
+
   constructor() { }
 
   ngOnInit(): void {
