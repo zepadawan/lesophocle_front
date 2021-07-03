@@ -198,7 +198,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@>=9.0.0", "@angular/common@~12.0.4", "@angular/common@12.0.4":
+"@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@>=6.0.0", "@angular/common@>=9.0.0", "@angular/common@~12.0.4", "@angular/common@12.0.4":
   "integrity" "sha512-P0l5OcDdJhsURakJXxV9tGbicY8a6fEBsB+9f4iTEm36Q1FO0/7RhMMlwUDBlNK37P1oi7pEUA0mRcFIx9TOLA=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-12.0.4.tgz"
   "version" "12.0.4"
@@ -251,7 +251,7 @@
   "resolved" "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   "version" "9.0.0"
 
-"@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@>=9.0.0", "@angular/core@~12.0.4", "@angular/core@12.0.4", "@angular/core@9.0.0":
+"@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@>=6.0.0", "@angular/core@>=9.0.0", "@angular/core@~12.0.4", "@angular/core@12.0.4", "@angular/core@9.0.0":
   "integrity" "sha512-KYFcFDot89F65CN3MzMEFoUPCVEZUkSQCLyxWfJAJT56Vtik6r91w6qwprFJ2wRk7SJ7018NLFwjZQIElj0s8A=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-12.0.4.tgz"
   "version" "12.0.4"
@@ -3555,6 +3555,11 @@
   "integrity" "sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA=="
   "resolved" "https://registry.npmjs.org/cookie/-/cookie-0.4.1.tgz"
   "version" "0.4.1"
+
+"cookieconsent@^3.1.1", "cookieconsent@>=3.1.0":
+  "integrity" "sha512-v8JWLJcI7Zs9NWrs8hiVldVtm3EBF70TJI231vxn6YToBGj0c9dvdnYwltydkAnrbBMOM/qX1xLFrnTfm5wTag=="
+  "resolved" "https://registry.npmjs.org/cookieconsent/-/cookieconsent-3.1.1.tgz"
+  "version" "3.1.1"
 
 "copy-anything@^2.0.1":
   "integrity" "sha512-GK6QUtisv4fNS+XcI7shX0Gx9ORg7QqIznyfho79JTnX1XhLiyZHfftvGiziqzRiEi/Bjhgpi+D2o7HxJFPnDQ=="
@@ -7475,6 +7480,11 @@
     "yaml" "^1.10.0"
   optionalDependencies:
     "hpagent" "^0.1.1"
+
+"ngx-cookieconsent@^2.2.3":
+  "integrity" "sha512-vg7M4XZSTFRAQq20M0YVJdz5OkXIu0t0MSYos0vvu7oblaEivQstA1Mg5bO7OJYp+oFoTEefWhvO2nCiyHn9SQ=="
+  "resolved" "https://registry.npmjs.org/ngx-cookieconsent/-/ngx-cookieconsent-2.2.3.tgz"
+  "version" "2.2.3"
 
 "nice-try@^1.0.4":
   "integrity" "sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ=="

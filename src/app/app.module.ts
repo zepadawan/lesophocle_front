@@ -37,6 +37,10 @@ import { } from '@angular/common'
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
 
+//RGPD
+import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
+
+
 import { EditCategorieComponent } from './components/administration/categories/edit-categorie/edit-categorie.component';
 import { AddCategorieComponent } from './components/administration/categories/add-categorie/add-categorie.component';
 import { LesFormaulesComponent } from './components/restaurant/lesMenus/les-formaules/les-formaules.component';
@@ -91,6 +95,62 @@ export function ConfigLoader(configService: ConfigService) {
   //Note: this factory need to return a function (that return a promise)
   return () => configService.onLoad(environment.configFile);
 }
+
+// rgpd
+const cookieConfig:NgcCookieConsentConfig = {
+  cookie: {
+    // domain: 'localhost' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
+    domain: 'https://lesophocle.com' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
+  },
+  position:"bottom-left",
+  palette: {
+    popup: {
+      "background": "#000000",
+      "text": "#ffffff",
+      "link": "#ffffff"
+    },
+    button: {
+      "background": "#f1d600",
+      "text": "#000000",
+      "border": "transparent"
+    }
+  },
+  theme: 'edgeless',
+  type: 'info',
+  layout: 'my-custom-layout',
+  layouts: {
+    "my-custom-layout": '{{messagelink}}{{compliance}}'
+  },
+  // elements:{
+  //   messagelink: `
+  //   <span id="cookieconsent:desc" class="cc-message">{{message}}
+  //     <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{cookiePolicyHref}}" target="_blank">{{cookiePolicyLink}}</a>,
+  //     <a aria-label="learn more about our privacy policy" tabindex="1" class="cc-link" href="{{privacyPolicyHref}}" target="_blank">{{privacyPolicyLink}}</a> and our
+  //     <a aria-label="learn more about our terms of service" tabindex="2" class="cc-link" href="{{tosHref}}" target="_blank">{{tosLink}}</a>
+  //   </span>
+  //   `,
+  // },
+  content:{
+    // "message" : 'En utilisant notre site, vous reconnaissez avoir lu et compris nos  ',
+    "message": "Ce site web utilise des cookies pour vous assurer la meilleure expérience de navigation sur notre site.",
+    "dismiss": "OK, j'ai compris!",
+    "deny": "Refuser",
+    "link": "Plus d'information",
+    "href": "https://cookiesandyou.com",
+    "policy": "Cookie Policy",
+    "header": "Cookies sur le site!",
+    "allow": "Autoriser les cookies",
+
+    cookiePolicyLink: 'Cookie Policy',
+    cookiePolicyHref: 'https://cookie.com',
+
+    privacyPolicyLink: 'Privacy Policy',
+    privacyPolicyHref: 'https://privacy.com',
+
+    tosLink: 'Terms of Service',
+    tosHref: 'https://tos.com',
+  }
+};
 
 @NgModule({
   declarations: [
@@ -176,6 +236,7 @@ export function ConfigLoader(configService: ConfigService) {
     MatCarouselModule.forRoot(),
     GoogleMapsModule,
     MatGridListModule,
+    NgcCookieConsentModule.forRoot(cookieConfig),
 
   ],
   entryComponents: [
