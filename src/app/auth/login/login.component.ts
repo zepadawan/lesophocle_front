@@ -14,6 +14,8 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
+  email : string;
   loginForm: FormGroup;
   user: User;
   loginSubscription: Subscription;

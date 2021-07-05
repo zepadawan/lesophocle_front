@@ -12,10 +12,60 @@
 
 .col2 {
   /* background-color: red; */
-  text-align: left;
-
+  text-align: center;
   flex: 0 0 auto;
   width: 30%;
+}
+.col2 input {
+  text-align: center;
+}
+
+.col2-date {
+  flex: 0 0 auto;
+  margin-top: 7px;
+  margin-left: 167px;
+  height: 120px;
+  width: 400px;
+  border: 1px;
+  border-color: black;
+  border-width: 1px;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px lightblue;
+}
+
+.col-date-input {
+  flex: 0 0 auto;
+  margin-top: 7px;
+  margin-left: 167px;
+  width: 200px;
+}
+mat-label {
+  font-weight: bold;
+}
+
+mat-form-field {
+  width: 395px;
+  height: 150px;
+  text-align: center;
+  border: none;
+  /* border: 0.2px solid #666; */
+  opacity: 1;
+}
+
+/* mat-datepicker {
+  InputProps = {{
+     {
+      display: "none";
+    }
+  }
+} */
+
+mat-form-field-outline-end {
+  border: none;
+}
+mat-form-field-underline {
+  display: none;
 }
 
 .col2 input {

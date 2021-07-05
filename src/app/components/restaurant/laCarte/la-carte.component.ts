@@ -107,7 +107,7 @@ export class LaCarteComponent implements OnChanges, OnInit, OnDestroy {
   editAllergenes() {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '300px',
-      height: '600px',
+      height: '500px',
       backdropClass: 'backdropBackground', // This is the "wanted" line
       data: {}
     });

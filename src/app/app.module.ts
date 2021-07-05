@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -25,14 +25,20 @@ import { HeaderAdminComponent } from './components/gui/header-admin/header-admin
 // Material
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatNativeDateModule,  MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
+import { MY_DATE_FORMAT } from './models/my-date-format';
+import { MatDatepickerModule,  } from '@angular/material/datepicker';
+import { MomentDateModule } from '@angular/material-moment-adapter';
 
-import { } from '@angular/common'
 
-// Google
+
+// Google MAT_DATE_FORMAT
 
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
@@ -215,9 +221,6 @@ const cookieConfig:NgcCookieConsentConfig = {
     CustomClientComponent,
     CustomConcertComponent,
 
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -231,11 +234,15 @@ const cookieConfig:NgcCookieConsentConfig = {
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     MatFormFieldModule,
     MatDialogModule,
     MatCarouselModule.forRoot(),
     GoogleMapsModule,
     MatGridListModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MomentDateModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
 
   ],
@@ -249,6 +256,9 @@ const cookieConfig:NgcCookieConsentConfig = {
       useFactory: ConfigLoader,
       deps: [ConfigService],
       multi: true
+    },
+    {
+       provide : MAT_DATE_FORMATS, useValue : MY_DATE_FORMAT
     }
 
   ],

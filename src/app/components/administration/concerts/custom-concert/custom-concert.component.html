@@ -1,7 +1,7 @@
 <div class="container row">
   <div class="col-md-6">
     <form [formGroup]="concertForm" id="concertForm">
-
+<!--
       <div class="row col-sm-10" style= "height: 40px;">
         <div class="col1" >
           <label>Date de l'évenement :</label>
@@ -9,6 +9,18 @@
         <div class="col2">
           <input formControlName ="date">
         </div>
+      </div> -->
+
+      <div class="col2-date">
+        <!-- 'legacy' | 'standard' | 'fill' | 'outline'; -->
+      <mat-form-field color="accent" appearance="accent" >
+        <div>
+        <mat-label  >Date du Concert</mat-label>
+        <input matInput [matDatepicker]="picker1"  formControlName ="date" [disabled]="true">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 [disabled]="false"   ></mat-datepicker>
+      </div>
+      </mat-form-field>
       </div>
 
       <div class="row col-sm-10" style= "height: 40px;">
@@ -16,7 +28,7 @@
           <label>prix :</label>
         </div>
         <div class="col2">
-          <input formControlName ="prix" >
+          <input  formControlName ="prix" >
         </div>
       </div>
 
@@ -26,7 +38,7 @@
           <label>heure de début :</label>
         </div>
         <div class="col2">
-          <input formControlName ="heuredebut" >
+          <input  formControlName ="heuredebut" >
         </div>
       </div>
 
@@ -35,22 +47,22 @@
           <label>Heure de fin :</label>
         </div>
         <div class="col2">
-          <input  formControlName ="heurefin" >
+          <input    formControlName ="heurefin" >
         </div>
       </div>
 
       <div class="row col-sm-10" style= "height: 40px;">
         <div class="col1" >
-          <label>Heure du fin :</label>
+          <label>Heure du Diner :</label>
         </div>
         <div class="col2">
-          <input  formControlName ="dinerdebut">
+          <input   formControlName ="dinerdebut">
         </div>
       </div>
 
       <div class="row col-sm-10" style= "height: 40px;">
         <div class="col1" >
-          <label>Nombre de personnes totales :</label>
+          <label>Nb total de pers :</label>
         </div>
         <div class="col2">
           <input  formControlName ="nbpersmax" type="text">

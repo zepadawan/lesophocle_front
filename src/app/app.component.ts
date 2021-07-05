@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DateAdapter } from '@angular/material/core';
 import { NgcCookieConsentService, NgcInitializeEvent, NgcNoCookieLawEvent, NgcStatusChangeEvent } from 'ngx-cookieconsent';
 import { Subscription } from 'rxjs';
 
@@ -19,7 +20,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private revokeChoiceSubscription: Subscription;
   private noCookieLawSubscription: Subscription;
 
-  constructor(private ccService: NgcCookieConsentService){}
+  constructor(private ccService: NgcCookieConsentService,
+    private dateAdapter : DateAdapter<Date>){
+      this.dateAdapter.setLocale('fr');
+    }
+
 
   ngOnInit(): void {
     // subscribe to cookieconsent observables to react to main events
