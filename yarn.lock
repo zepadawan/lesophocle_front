@@ -7275,6 +7275,20 @@ ngrok@*:
   optionalDependencies:
     hpagent "^0.1.1"
 
+ngx-cookie-service@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-cookie-service/-/ngx-cookie-service-12.0.0.tgz#1578dabe80ef9fa3db5234bd4c1c7122adbc9ff4"
+  integrity sha512-/Pklpn8Ul0P016Dc5isEU8AnTT3CI6Zz1JhrW1uH/3oJbfW7MGTtJAgAv1Rk92rfe+kNTDh+O+yj0xmr1Mt/tA==
+  dependencies:
+    tslib "^2.0.0"
+
+ngx-cookie@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-cookie/-/ngx-cookie-5.0.2.tgz#cb658180b786d511d0ef163cfe195061d0a0e0e1"
+  integrity sha512-auivWhAhC5bW1HssvtQild1TREHWb1JtcKO0e+VGe9T7LHrfi5w2qcP8C58ly64PT+brZHQBvT1Azb7a6goHZA==
+  dependencies:
+    tslib "^2.0.0"
+
 ngx-cookieconsent@^2.2.3:
   version "2.2.3"
   resolved "https://registry.npmjs.org/ngx-cookieconsent/-/ngx-cookieconsent-2.2.3.tgz"

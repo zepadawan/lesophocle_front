@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Evenement } from 'src/app/models/evenement.model';
@@ -56,8 +56,8 @@ export class EditConcertComponent implements OnInit, OnDestroy {
         .then( (data:Result)=>{
           this.concert = data.args;
           this.concertForm = this.fb.group({
-            date : [this.concert.date, []],
-            prix : [this.concert.prix, []],
+            date : [this.concert.date, [Validators.required]],
+            prix : [this.concert.prix, [Validators.required]],
             heuredebut : [this.concert.heuredebut, []],
             heurefin : [this.concert.heurefin, []],
             dinerdebut : [this.concert.dinerdebut, []],

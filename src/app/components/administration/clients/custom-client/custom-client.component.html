@@ -1,88 +1,137 @@
 <div class="col-sm-12 offset-sm-3 mt-2">
-
   <form [formGroup]="clientForm">
-
-      <div class="col-md-5">
-
-        <div class="form-group">
-          <label class="radio-inline">
-            <input type="radio" id="sexe"  formControlName="sexe" [value]="0">M.
-          </label>
-          <label class="radio-inline" style="padding-left: 10px;">
-            <input type="radio" id="sexe" formControlName="sexe" [value]="1"> Mme
-          </label>
-        </div>
-
-        <div class="example-container">
-          <label for="lastname">Nom : </label>
-          <mat-form-field appearance="standard" >
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-        </div>
-
-        <div class="form-group">
-          <label for="lastname">Nom : </label>
-          <input type="text" placeholder="saisir le nom" id="lastname" formControlName="lastname"
-            class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label for="firstname">Prénom : </label>
-            <input type="text" placeholder="saisir le Prénom" id="firstname" formControlName="firstname"
-              class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="username">Surnom : </label>
-          <input type="text" placeholder="saisir le Surnom" id="username" formControlName="username"
-            class="form-control">
-        </div>
-
-
-        <div class="form-group">
-          <label for="email">Email : </label>
-          <input type="text" placeholder="saisir l' email" id="email" formControlName="email"
-            class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="tel">Telephone : </label>
-          <input type="text" placeholder="saisir le numéro de téléphone" id="tel" formControlName="tel"
-            class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="adresse">Adresse : </label>
-          <input type="text" placeholder="saisir l'adresse" id="adresse" formControlName="adresse"
-            class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="ville">Ville : </label>
-          <input type="text" placeholder="saisir la ville" id="ville" formControlName="ville"
-            class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="cp">Code Postal : </label>
-          <input type="text" placeholder="saisir le code Postal" id="cp" formControlName="cp"
-            class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="naissance">Date de Naissance : </label>
-          <input type="text" placeholder="saisir la date de Naissance" id="naissance" formControlName="naissance"
-            class="form-control">
-        </div>
-
-
+    <div>
+      <br />
+      <!-- début du formulaire -->
+      <div class="form-group">
+        <mat-radio-group formControlName="sexe">
+          <mat-radio-button [value]="0">Mr.</mat-radio-button>
+          <mat-radio-button style="margin-left: 50px" [value]="1"
+            >Mme</mat-radio-button
+          >
+        </mat-radio-group>
       </div>
 
-    </form>
-  </div>
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Nom :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le nom"
+            id="lastname"
+            formControlName="lastname"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
 
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Prénom :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le Prénom"
+            id="firstname"
+            formControlName="firstname"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
 
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Surnom :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le Surnom"
+            id="username"
+            formControlName="username"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
 
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="pat@example.com"
+            [formControl]="email"
+            required
+            formControlName="email"
+            class="form-control"
+          />
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </div>
 
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>téléphone :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le numéro de téléphone"
+            id="tel"
+            formControlName="tel"
+            class="form-control"
+            pattern=""
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Adresse :</mat-label>
+          <input
+            matInput
+            placeholder="saisir l'adresse"
+            id="adresse"
+            formControlName="adresse"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Ville :</mat-label>
+          <input
+            matInput
+            placeholder="saisir la ville"
+            id="ville"
+            formControlName="ville"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Code Postal :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le code Postal"
+            id="cp"
+            formControlName="cp"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Date de Naissance :</mat-label>
+          <input
+            matInput
+            placeholder="saisir la date de Naissance"
+            id="naissance"
+            formControlName="naissance"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<node-footer></node-footer>

@@ -13,61 +13,66 @@
 
       <div class="col2-date">
         <!-- 'legacy' | 'standard' | 'fill' | 'outline'; -->
-      <mat-form-field color="accent" appearance="accent" >
-        <div>
-        <mat-label  >Date du Concert</mat-label>
-        <input matInput [matDatepicker]="picker1"  formControlName ="date" [disabled]="true">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1 [disabled]="false"   ></mat-datepicker>
+        <mat-form-field color="accent" appearance="accent" >
+          <div>
+          <mat-label  >Date du Concert</mat-label>
+          <input matInput [matDatepicker]="picker1"  formControlName ="date" [disabled]="true">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1 [disabled]="false"   ></mat-datepicker>
+        </div>
+        </mat-form-field>
       </div>
-      </mat-form-field>
-      </div>
+      <br>
 
-      <div class="row col-sm-10" style= "height: 40px;">
-        <div class="col1" >
-          <label>prix :</label>
-        </div>
-        <div class="col2">
-          <input  formControlName ="prix" >
-        </div>
+      <div class="col2-input" >
+        <!-- <input  formControlName ="prix"  placeholder="Prix de la soirée en € ou gratuit "> -->
+        <mat-form-field  appearance="accent">
+          <mat-label>Prix de la soirée</mat-label>
+          <input matInput #input placeholder="Ex :  25,00 € ou Gratuit" formControlName="prix">
+          <mat-error> {{obligatoire}}</mat-error>
+        </mat-form-field>
       </div>
+      <br>
 
-
-      <div class="row col-sm-10" style= "height: 40px;">
-        <div class="col1" >
-          <label>heure de début :</label>
-        </div>
-        <div class="col2">
-          <input  formControlName ="heuredebut" >
-        </div>
+      <div class="col2-input" >
+        <!-- <input  formControlName ="prix"  placeholder="Prix de la soirée en € ou gratuit "> -->
+        <mat-form-field  appearance="accent">
+          <mat-label>Heure de début</mat-label>
+          <input matInput #input  placeholder="ex : 21h30" formControlName="heuredebut">
+          <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
+        </mat-form-field>
       </div>
+      <br>
 
-      <div class="row col-sm-10" style= "height: 40px;">
-        <div class="col1" >
-          <label>Heure de fin :</label>
-        </div>
-        <div class="col2">
-          <input    formControlName ="heurefin" >
-        </div>
+      <div class="col2-input" >
+        <!-- <input  formControlName ="prix"  placeholder="Prix de la soirée en € ou gratuit "> -->
+        <mat-form-field  appearance="accent">
+          <mat-label>Heure de fin</mat-label>
+          <input matInput #input  placeholder="ex : 23h30" formControlName="heurefin">
+          <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
+        </mat-form-field>
       </div>
+      <br>
 
-      <div class="row col-sm-10" style= "height: 40px;">
-        <div class="col1" >
-          <label>Heure du Diner :</label>
-        </div>
-        <div class="col2">
-          <input   formControlName ="dinerdebut">
-        </div>
+      <div class="col2-input" >
+        <!-- <input  formControlName ="prix"  placeholder="Prix de la soirée en € ou gratuit "> -->
+        <mat-form-field  appearance="accent">
+          <mat-label>Heure du Diner</mat-label>
+          <input matInput #input placeholder="ex : 20h00" formControlName="dinerdebut">
+          <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
+        </mat-form-field>
       </div>
+      <br>
 
-      <div class="row col-sm-10" style= "height: 40px;">
-        <div class="col1" >
-          <label>Nb total de pers :</label>
-        </div>
-        <div class="col2">
-          <input  formControlName ="nbpersmax" type="text">
-        </div>
+      <div class="col2-input" >
+        <!-- <input  formControlName ="prix"  placeholder="Prix de la soirée en € ou gratuit "> -->
+        <mat-form-field  appearance="accent">
+          <mat-label>Nb total de pers</mat-label>
+          <input matInput #input placeholder="ex : 200 places" formControlName="nbpersmax">
+          <!-- <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint> -->
+        </mat-form-field>
       </div>
+      <br>
 
       <div class="row col-sm-10">
         <div class="col1" >
@@ -78,6 +83,7 @@
           </textarea>
         </div>
       </div>
+      <br>
 
       <div class="row col-sm-10">
         <div class="col1" >
@@ -90,7 +96,6 @@
       </div>
     </form>
   </div>
-
 
   <div class="col-md-6">
     <button type="button" (click)="filePicker.click()" class="btn btn-success btn--md m-2">Importer une

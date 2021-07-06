@@ -35,10 +35,11 @@ import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { MY_DATE_FORMAT } from './models/my-date-format';
 import { MatDatepickerModule,  } from '@angular/material/datepicker';
 import { MomentDateModule } from '@angular/material-moment-adapter';
+import {MatRadioModule} from '@angular/material/radio';
 
 
-
-// Google MAT_DATE_FORMAT
+// Coockies
+import { CookieService } from 'ngx-cookie-service';
 
 // tinymce
 import { EditorModule } from '@tinymce/tinymce-angular';
@@ -95,6 +96,7 @@ import { AdminClientComponent } from './components/administration/clients/admin-
 import { EditClientComponent } from './components/administration/clients/edit-client/edit-client.component';
 import { CustomClientComponent } from './components/administration/clients/custom-client/custom-client.component';
 import { CustomConcertComponent } from './components/administration/concerts/custom-concert/custom-concert.component';
+import { ShowConcertComponent } from './components/restaurant/lesConcerts/show-concert/show-concert.component';
 
 
 export function ConfigLoader(configService: ConfigService) {
@@ -220,6 +222,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     EditClientComponent,
     CustomClientComponent,
     CustomConcertComponent,
+    ShowConcertComponent,
 
   ],
   imports: [
@@ -243,6 +246,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     MatNativeDateModule,
     MatDatepickerModule,
     MomentDateModule,
+    MatRadioModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
 
   ],
@@ -259,8 +263,8 @@ const cookieConfig:NgcCookieConsentConfig = {
     },
     {
        provide : MAT_DATE_FORMATS, useValue : MY_DATE_FORMAT
-    }
-
+    },
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })

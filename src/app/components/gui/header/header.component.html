@@ -147,7 +147,17 @@
 
         </li>
         <li routerLinkActive="active"><a routerLink="/notFound">Les Boissons</a></li>
-        <li routerLinkActive="active"><a routerLink="/concerts">Les soirées</a></li>
+        <li routerLinkActive="active"><a >Les soirées</a>
+          <ul class="sub-menu" style="width :100px">
+            <p routerLink="show-concert"><i class="icon-star"></i>
+              la Prochaine Soirée
+            </p>
+            <p routerLink="/concerts"><i class="icon-star"></i>
+              Diaporama
+            </p>
+          </ul>
+        </li>
+
         <li routerLinkActive="active"><a routerLink="/soirees">privatisation</a></li>
         <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/carousel">carousel</a></li>
         <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">click & collect</a></li>

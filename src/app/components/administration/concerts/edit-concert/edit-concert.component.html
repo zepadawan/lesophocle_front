@@ -9,8 +9,11 @@
 
 <!-- <button type="button" (click)="onSubmit()" class="btn theme-btn--dark1 btn--md m-2"
 [disabled]="concertForm.invalid" >Modifier le Concert</button> -->
+
+<div class="col-md-6" style="margin-left: 150px;">
 <button type="button" (click)="onSubmit()" class="btn theme-btn--dark1 btn--md m-2"
- >Modifier le Concert</button>
+[disabled]="concertForm.invalid" >Modifier le Concert</button>
 <button type="button" [routerLink]="['/admin-concert']" routerLinkActive="router-link-active"  class="btn theme-btn--dark1 btn--md m-2">Retour</button>
 <button type="button" (click)="onExit()" class="btn theme-btn--dark1 btn--md m-2">Accueil</button>
+</div>
 

@@ -5,3 +5,30 @@ input {
 .example-container .mat-form-field + .mat-form-field {
   margin-left: 8px;
 }
+
+.form-control {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  color: black;
+}
+
+mat-form-field {
+  width: 400px;
+  height: 30px;
+  /* background-color: lightgreen; */
+}
+mat-form-field input {
+  width: 400px;
+  background-color: lightgray;
+  height: 30px;
+}
+
+mat-label {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  color: black;
+  font-size: medium;
+  text-decoration: underline;
+  font-style: italic;
+  height: 30px;
+}
