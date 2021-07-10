@@ -31,6 +31,9 @@ import { AdminConcertComponent } from './components/administration/concerts/admi
 import { AddConcertComponent } from './components/administration/concerts/add-concert/add-concert.component';
 import { EditConcertComponent } from './components/administration/concerts/edit-concert/edit-concert.component';
 import { ShowConcertComponent } from './components/restaurant/lesConcerts/show-concert/show-concert.component';
+import { AdminBoissonComponent } from './components/administration/boissons/admin-boisson/admin-boisson.component';
+import { AddBoissonComponent } from './components/administration/boissons/add-boisson/add-boisson.component';
+import { EditBoissonComponent } from './components/administration/boissons/edit-boisson/edit-boisson.component';
 
 const routes: Routes = [
 
@@ -67,6 +70,11 @@ const routes: Routes = [
   { path: 'edit-plat/:id', component: EditPlatComponent, },
   { path: 'show-plat/:id', component: ShowPlatComponent, },
   { path: 'show-image/:id', component: ShowImageComponent, },
+
+  // Boissons
+  { path: 'admin-boisson', component: AdminBoissonComponent, },
+  { path: 'add-boisson', component: AddBoissonComponent, },
+  { path: 'edit-boisson/:id', component: EditBoissonComponent, },
 
   // Menu du jour
   { path: 'menujour', component: MenuDuJourComponent },

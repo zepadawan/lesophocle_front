@@ -2,27 +2,32 @@
 
 <div class="container">
   <div class="table-responsive">
-    <table class="table table-hover">
+    <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th scope="col" style="width: 10%">Nom</th>
-          <th scope="col" style="width: 10%">Prénom</th>
-          <th scope="col" style="width: 10%">email</th>
+          <th scope="col" style="width: 10%">Libellé</th>
+          <th scope="col" style="width: 10%">Prix</th>
+          <!-- <th scope="col" style="width: 10%">Catégorie</th> -->
+          <th scope="col" style="width: 10%">Contenance</th>
           <th scope="col" style="width: 10%">Editer</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let client of clients; let index = index">
+        <tr *ngFor="let boisson of boissons; let index = index">
           <th style="height: auto">
-            {{ client.lastname }}
+            {{ boisson.libelle }}
           </th>
 
           <td style="height: auto">
-            {{ client.firstname }}
+            {{ boisson.prix }}
           </td>
 
+          <!-- <td style="height: auto">
+            {{ boisson.id_categorie }}
+          </td> -->
+
           <td style="height: auto">
-            {{ client.email }}
+            {{ boisson.contenance }}
           </td>
 
           <td>
@@ -30,7 +35,7 @@
               *ngIf="isAdmin"
               class="pro-btn"
               title="Editer"
-              [routerLink]="['/edit-client', client.id]"
+              [routerLink]="['/edit-boisson', boisson.id]"
             >
               <i class="ion-android-create"></i>
             </button>
@@ -43,7 +48,7 @@
         <div class="sign-btn">
           <button
             class="btn theme-btn--dark1 btn--md"
-            [routerLink]="['/add-client']"
+            [routerLink]="['/add-boisson']"
             routerLinkActive="router-link-active"
           >
             Création

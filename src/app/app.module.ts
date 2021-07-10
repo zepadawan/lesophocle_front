@@ -97,6 +97,14 @@ import { EditClientComponent } from './components/administration/clients/edit-cl
 import { CustomClientComponent } from './components/administration/clients/custom-client/custom-client.component';
 import { CustomConcertComponent } from './components/administration/concerts/custom-concert/custom-concert.component';
 import { ShowConcertComponent } from './components/restaurant/lesConcerts/show-concert/show-concert.component';
+import { AddCategorieBoissonComponent } from './components/administration/categorieBoisson/add-categorie-boisson/add-categorie-boisson.component';
+import { EditCategorieBoissonComponent } from './components/administration/categorieBoisson/edit-categorie-boisson/edit-categorie-boisson.component';
+import { AdminCategorieBoissonComponent } from './components/administration/categorieBoisson/admin-categorie-boisson/admin-categorie-boisson.component';
+import { CustomCategorieBoissonComponent } from './components/administration/categorieBoisson/custom-categorie-boisson/custom-categorie-boisson.component';
+import { EditBoissonComponent } from './components/administration/boissons/edit-boisson/edit-boisson.component';
+import { AddBoissonComponent } from './components/administration/boissons/add-boisson/add-boisson.component';
+import { AdminBoissonComponent } from './components/administration/boissons/admin-boisson/admin-boisson.component';
+import { CustomBoissonComponent } from './components/administration/boissons/custom-boisson/custom-boisson.component';
 
 
 export function ConfigLoader(configService: ConfigService) {
@@ -223,6 +231,14 @@ const cookieConfig:NgcCookieConsentConfig = {
     CustomClientComponent,
     CustomConcertComponent,
     ShowConcertComponent,
+    AddCategorieBoissonComponent,
+    EditCategorieBoissonComponent,
+    AdminCategorieBoissonComponent,
+    CustomCategorieBoissonComponent,
+    EditBoissonComponent,
+    AddBoissonComponent,
+    AdminBoissonComponent,
+    CustomBoissonComponent,
 
   ],
   imports: [

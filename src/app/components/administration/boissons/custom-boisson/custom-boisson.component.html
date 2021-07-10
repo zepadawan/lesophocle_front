@@ -1,0 +1,51 @@
+<div class="col-sm-12 offset-sm-3 mt-2">
+  <form [formGroup]="boissonForm">
+    <div>
+      <br />
+
+      <!-- début du formulaire -->
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Libellé :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le Libellé"
+            id="libelle"
+            formControlName="libelle"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- Categorie -->
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Contenance :</mat-label>
+          <input
+            matInput
+            placeholder="saisir la Contenance"
+            id="contenance"
+            formControlName="firstname"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="accent">
+          <mat-label>Prix :</mat-label>
+          <input
+            matInput
+            placeholder="saisir le Prix"
+            id="prix"
+            formControlName="prix"
+            class="form-control"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<node-footer></node-footer>
