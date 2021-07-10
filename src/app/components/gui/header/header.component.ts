@@ -31,7 +31,8 @@ export class HeaderComponent implements OnInit {
 
   @Input() isAuth : boolean;
   @Input() user: User;
-  @Input() isAdmin : boolean = true;
+  // @Input() isAdmin : boolean = true;
+  @Input() isAdmin : boolean ;
   @Input() isSuperAdmin : boolean;
 
   constructor(private cartService: CartService,

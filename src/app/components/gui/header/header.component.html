@@ -2,22 +2,31 @@
   <!-- header top start -->
   <div class="header-top theme1 bg-dark py-45">
     <div class="container">
-      <div class="row ">
+      <div class="row">
         <!-- align-items-center-->
         <div class="col-lg-6 col-md-7 order-last order-md-first">
-          <div class="static-info text-center text-md-right">
-          </div>
+          <div class="static-info text-center text-md-right"></div>
         </div>
         <!-- <div class="col-lg-2 col-md-2"> -->
         <div class="">
           <!-- <div class="logo text-center text-sm-left mb-30 mb-sm-0"> -->
-          <div class="logo"
-            style="top:15px; position: absolute; text-align: left; left: 20px; height: 30px; width: 150px;">
-            <a href="index.html" aria-label=""><img [src]="refApiImages + '/' + 'divers/logo.jpg'" alt=""></a>
+          <div
+            class="logo"
+            style="
+              top: 15px;
+              position: absolute;
+              text-align: left;
+              left: 20px;
+              height: 30px;
+              width: 150px;
+            "
+          >
+            <a href="index.html" aria-label=""
+              ><img [src]="refApiImages + '/' + 'divers/logo.jpg'" alt=""
+            /></a>
           </div>
 
-          <nav class="navbar-top pb-2 pb-md-0 position-relative">
-          </nav>
+          <nav class="navbar-top pb-2 pb-md-0 position-relative"></nav>
         </div>
       </div>
     </div>
@@ -28,21 +37,31 @@
   <div class="header-middle pt-20">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-sm-6 col-lg-2 order-first">
-
-        </div>
+        <div class="col-sm-6 col-lg-2 order-first"></div>
 
         <div class="col-sm-6 col-lg-5 col-xl-4">
           <!-- search-form end -->
-          <div class="d-flex align-items-center justify-content-center justify-content-sm-end">
+          <div
+            class="
+              d-flex
+              align-items-center
+              justify-content-center justify-content-sm-end
+            "
+          >
             <div class="media static-media mr-50 d-none d-lg-flex">
-              <img class="mr-3 align-self-center" src="assets/img/icon/1.png" alt="icon">
+              <img
+                class="mr-3 align-self-center"
+                src="assets/img/icon/1.png"
+                alt="icon"
+              />
               <div class="media-body">
                 <div class="phone">
                   <span class="text-muted">nous appeler</span>
                 </div>
                 <div class="phone">
-                  <a href="tel:(+33)493333401" class="text-dark">(+33) 493333401</a>
+                  <a href="tel:(+33)493333401" class="text-dark"
+                    >(+33) 493333401</a
+                  >
                 </div>
               </div>
             </div>
@@ -51,122 +70,163 @@
             <div class="mobile-menu-toggle theme1 d-lg-none">
               <a href="#offcanvas-mobile-menu" class="offcanvas-toggle">
                 <svg viewbox="0 0 800 600">
-                  <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
-                    id="top">
-                  </path>
+                  <path
+                    d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
+                    id="top"
+                  ></path>
                   <path d="M300,320 L540,320" id="middle"></path>
-                  <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
-                    id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318)">
-                  </path>
+                  <path
+                    d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
+                    id="bottom"
+                    transform="translate(480, 320) scale(1, -1) translate(-480, -318)"
+                  ></path>
                 </svg>
               </a>
             </div>
           </div>
         </div>
         <div class="col-lg-5 col-xl-6 order-lg-first">
-          <div class="search-form pt-30 pt-lg-0">
-          </div>
+          <div class="search-form pt-30 pt-lg-0"></div>
         </div>
       </div>
     </div>
   </div>
   <!-- header-middle end -->
 
-
   <!-- header bottom start -->
-  <br>
+  <br />
   <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-    <div class="collapse navbar-collapse dark col-lg-12 offset-lg-1 d-flex flex-wrap position-relative"
-      id="navbarSupportedContent">
+    <div
+      class="
+        collapse
+        navbar-collapse
+        dark
+        col-lg-12
+        offset-lg-1
+        d-flex
+        flex-wrap
+        position-relative
+      "
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav mr-auto main-menu d-flex text-dark">
         <li routerLinkActive="active"><a routerLink="/accueil">Accueil</a></li>
-        <li routerLinkActive="active" ><a routerLink="/administration">Administration</a>
-          <ul class="sub-menu" style="width :auto">
+        <li routerLinkActive="active" *ngIf="isAdmin">
+          <a routerLink="/administration">Administration</a>
+          <ul class="sub-menu" style="width: auto">
             <li>
-              <p class=""> <i class="icon-star"></i>
+              <p class="">
+                <i class="icon-star"></i>
                 gestion de la Carte
               </p>
-              <ul class="sub-menu" style="width :auto">
+              <ul class="sub-menu" style="width: auto">
                 <li *ngFor="let categorie of categories" class="admin-menu">
-                  <a [routerLink]="['/admin-plat',categorie.id]">
+                  <a [routerLink]="['/admin-plat', categorie.id]">
                     <i class="icon-eye"></i>
-                    {{categorie.libelle}}</a>
+                    {{ categorie.libelle }}</a
+                  >
                 </li>
               </ul>
             </li>
             <li>
-              <p routerLink="/notFound"><i class="icon-star"></i>
+              <p routerLink="/notFound">
+                <i class="icon-star"></i>
                 gestion des Formules et Menus
               </p>
-              <ul class="sub-menu" style="width :auto">
+              <ul class="sub-menu" style="width: auto">
                 <li *ngFor="let carte of cartes">
                   <a [routerLink]="['/carte.libelle', carte.id]">
                     <i class="icon-eye"></i>
-                    {{carte.libelle}}
+                    {{ carte.libelle }}
                   </a>
                 </li>
               </ul>
             </li>
             <li>
-              <p routerLink="/edit-menu"><i class="icon-star"></i>
+              <p routerLink="/edit-menu">
+                <i class="icon-star"></i>
                 Menu du Jour
               </p>
             </li>
             <li>
-              <p routerLink="/admin-categorie"><i class="icon-star"></i>
+              <p routerLink="/admin-categorie">
+                <i class="icon-star"></i>
                 gestion catégories
               </p>
             </li>
             <li>
-              <p routerLink="/admin-client"><i class="icon-star"></i>
+              <p routerLink="/admin-client">
+                <i class="icon-star"></i>
                 gestion des clients
               </p>
             </li>
             <li>
-              <p routerLink="/admin-concert"><i class="icon-star"></i>
+              <p routerLink="/admin-concert">
+                <i class="icon-star"></i>
                 gestion des soirées
               </p>
             </li>
-
           </ul>
         </li>
-        <li routerLinkActive="active"><a routerLink="/menujour">Menu du jour</a></li>
-        <li routerLinkActive="active"><a routerLink="/laCarte/1" style="cursor: pointer;">La Carte</a>
+        <li routerLinkActive="active">
+          <a routerLink="/menujour">Menu du jour</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/laCarte/1" style="cursor: pointer">La Carte</a>
           <ul class="sub-menu">
             <li *ngFor="let cat of categories">
-              <a [routerLink]="['/laCarte', cat.id]">{{cat.libelle}}</a>
+              <a [routerLink]="['/laCarte', cat.id]">{{ cat.libelle }}</a>
             </li>
           </ul>
         </li>
-        <li routerLinkActive="active"><a routerLink="/notFound">Les Formules et Menus</a>
-          <ul class="sub-menu" style="width :100px">
+        <li routerLinkActive="active">
+          <a routerLink="/notFound">Les Formules et Menus</a>
+          <ul class="sub-menu" style="width: 100px">
             <li *ngFor="let carte of cartes">
-              <a [routerLink]="['/carte.libelle', carte.id]">{{carte.libelle}}</a>
+              <a [routerLink]="['/carte.libelle', carte.id]">{{
+                carte.libelle
+              }}</a>
             </li>
           </ul>
-
         </li>
-        <li routerLinkActive="active"><a routerLink="/notFound">Les Boissons</a></li>
-        <li routerLinkActive="active"><a >Les soirées</a>
-          <ul class="sub-menu" style="width :100px">
-            <p routerLink="show-concert"><i class="icon-star"></i>
+        <li routerLinkActive="active">
+          <a routerLink="/notFound">Les Boissons</a>
+        </li>
+        <li routerLinkActive="active">
+          <a>Les soirées</a>
+          <ul class="sub-menu" style="width: 100px">
+            <p routerLink="show-concert">
+              <i class="icon-star"></i>
               la Prochaine Soirée
             </p>
-            <p routerLink="/concerts"><i class="icon-star"></i>
+            <p routerLink="/concerts">
+              <i class="icon-star"></i>
               Diaporama
             </p>
           </ul>
         </li>
 
-        <li routerLinkActive="active"><a routerLink="/soirees">privatisation</a></li>
-        <li routerLinkActive="active" *ngIf="isSuperAdmin"><a routerLink="/carousel">carousel</a></li>
-        <li routerLinkActive="active" *ngIf="isAdmin"><a routerLink="/notFound">click & collect</a></li>
-        <li routerLinkActive="active"><a routerLink="/nousEcrire">Nous écrire</a></li>
-        <li routerLinkActive="active"><a routerLink="/localize">Nous trouver</a></li>
-        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/connexion">Connexion</a></li>
-        <li (click)="onLogOut()" *ngIf="isAuth"><a class="btn">Déconnecter</a></li>
-
-
+        <li routerLinkActive="active">
+          <a routerLink="/soirees">privatisation</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="isSuperAdmin">
+          <a routerLink="/carousel">carousel</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="isAdmin">
+          <a routerLink="/notFound">click & collect</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/nousEcrire">Nous écrire</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/localize">Nous trouver</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuth">
+          <a routerLink="/connexion">Connexion</a>
+        </li>
+        <li (click)="onLogOut()" *ngIf="isAuth">
+          <a class="btn">Déconnecter</a>
+        </li>
       </ul>
     </div>
   </nav>
